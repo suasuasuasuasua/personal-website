@@ -1,26 +1,7 @@
 import HighlightedLink from "@/components/link";
 import { IconType } from "react-icons";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { SiMatrix, SiNextdotjs, SiProton } from "react-icons/si";
-
-const socialIcons = {
-  github: {
-    icon: FaGithub,
-    link: "https://github.com/suasuasuasuasua/personal-website",
-  },
-  linkedIn: {
-    icon: FaLinkedin,
-    link: "https://linkedin.com/in/jhoang124",
-  },
-  matrix: {
-    icon: SiMatrix,
-    link: "https://matrix.to/#/@suasuasuasuasua:matrix.org",
-  },
-  email: {
-    icon: SiProton,
-    link: "mailto:j124.dev@proton.me",
-  },
-};
+import { SiMatrix, SiProton } from "react-icons/si";
 
 export default function Footer() {
   return (
@@ -48,6 +29,25 @@ export default function Footer() {
     </footer>
   );
 }
+
+const socialIcons = {
+  github: {
+    icon: FaGithub,
+    link: "https://github.com/suasuasuasuasua/personal-website",
+  },
+  linkedIn: {
+    icon: FaLinkedin,
+    link: "https://linkedin.com/in/jhoang124",
+  },
+  matrix: {
+    icon: SiMatrix,
+    link: "https://matrix.to/#/@suasuasuasuasua:matrix.org",
+  },
+  email: {
+    icon: SiProton,
+    link: "mailto:j124.dev@proton.me",
+  },
+};
 
 function FooterIcon({ icon: Icon, link }: { icon: IconType; link: string }) {
   return (
