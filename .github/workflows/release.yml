@@ -47,6 +47,10 @@ jobs:
           git_name: ${{ steps.gpg.outputs.name }}
           git_email: ${{ steps.gpg.outputs.email }}
 
+      - name: Push tag to origin
+        run: |
+          git push origin tag ${{ steps.cz.outputs.version }}
+
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
