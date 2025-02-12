@@ -6,7 +6,22 @@ export const desktopAccessories: DeviceProps = {
     description: "5K monitor (regrets...)",
     link: "https://www.samsung.com/us/computing/monitors/5k/27-viewfinity-s9-5k-monitor-with-thunderbolt-4-matte-display-and-smart-features-ls27c900panxza/",
   },
+  dock: {
+    name: "Caldigit TS4",
+    description: "Thunderbolt 4 Dock",
+    link: "https://www.caldigit.com/thunderbolt-station-4/",
+  },
+  laptopStand: {
+    name: "Twelve South Curve",
+    description: "Laptop stand",
+    link: "https://www.amazon.com/gp/product/B081W9MRKG/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1",
+  },
   keyboard: {
+    name: "Magic Keyboard",
+    description: "Nice to use with the Macbook",
+    link: "https://www.apple.com/shop/product/MXCL3LL/A/magic-keyboard-usb-c-us-english",
+  },
+  "mechanical keyboard": {
     name: "Anne Pro 2",
     description: "60% mechanical keyboard",
     link: "https://www.amazon.com/ANNE-PRO-Wireless-Mechanical-Keyboard/dp/B07Y535X1V",
@@ -16,15 +31,10 @@ export const desktopAccessories: DeviceProps = {
     description: "Ergonomic mouse",
     link: "https://www.logitech.com/en-us/products/mice/mx-master-3s.html?srsltid=AfmBOorMsn59HLJBBVqNumSjlncJN9xZbLzKOX2QawavvtHO13kazAq7",
   },
-  laptopStand: {
-    name: "Twelve South Curve",
-    description: "Laptop stand",
-    link: "https://www.amazon.com/gp/product/B081W9MRKG/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1",
-  },
-  dock: {
-    name: "Caldigit TS4",
-    description: "Thunderbolt 4 Dock",
-    link: "https://www.caldigit.com/thunderbolt-station-4/",
+  trackpad: {
+    name: "Magic Trackpad",
+    description: "Also nice to use with the Macbook",
+    link: "https://www.apple.com/shop/product/MXK93AM/A/magic-trackpad-usb%E2%80%91c-white-multi-touch-surface",
   },
 };
 
@@ -47,9 +57,14 @@ export const wearables: DeviceProps = {
 };
 
 export const devices: DeviceProps = {
+  iphone: {
+    name: "iPhone Pro 15",
+    description: "Daily driver phone!",
+    link: "https://support.apple.com/en-us/111829",
+  },
   ipad: {
     name: "iPad Pro Gen 4",
-    description: "General purpose",
+    description: "General purpose tablet",
     link: "https://support.apple.com/en-us/111977",
   },
   kindle: {
