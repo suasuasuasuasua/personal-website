@@ -12,9 +12,13 @@ export default function Computer({
   return (
     <div>
       {/* Name of the computer */}
-      <HighlightedLink link={link} highlight="text-blue-400 text-lg">
-        {deviceName}
-      </HighlightedLink>
+      {link ? (
+        <HighlightedLink link={link} highlight="text-blue-400 text-lg">
+          {deviceName}
+        </HighlightedLink>
+      ) : (
+        deviceName
+      )}
 
       {/* Stick the data into a grid */}
       <div>

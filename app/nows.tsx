@@ -15,6 +15,18 @@ export const albums: AlbumProps = {
     artistLink:
       "https://open.spotify.com/artist/4TEK9tIkcoxib4GxT3O4ky?si=RM2MZ7fSREG0xgWXm5v2Dg",
   },
+  "IVE EMPATHY": {
+    title: "IVE EMPATHY",
+    artist: "IVE",
+    albumLink: "https://open.spotify.com/album/7vwi3kXdpkaRO3if4N2gBN",
+    artistLink: "https://open.spotify.com/artist/6RHTUrRF63xao58xh9FXYJ",
+  },
+  DRIP: {
+    title: "DRIP",
+    artist: "BABYMONSTER",
+    albumLink: "https://open.spotify.com/album/6Lp82GTJXzgtIopT0g7N7k",
+    artistLink: "https://open.spotify.com/artist/1SIocsqdEefUTE6XKGUiVS",
+  },
   Bewitched: {
     title: "Bewitched",
     artist: "Laufey",
@@ -27,26 +39,14 @@ export const albums: AlbumProps = {
     albumLink: "https://open.spotify.com/album/5lVqgXqdoIH3W1wUM2hzPx",
     artistLink: "https://open.spotify.com/artist/0Kekt6CKSo0m5mivKcoH51",
   },
-  Telos: {
-    title: "Telos",
-    artist: "Zedd",
-    albumLink: "https://open.spotify.com/album/5V7WoYwRXtheRjhOjgUeR5",
-    artistLink: "https://open.spotify.com/artist/2qxJFvFYMEDqd7ui6kSAcq",
-  },
 };
 
 export const books: BookProps = {
-  "The Old Man and The Sea": {
-    title: "The Old Man and The Sea",
-    author: "Ernest Hemingway",
-    bookLink: "https://isbndb.com/book/9780684801223",
-    authorLink: "https://en.wikipedia.org/wiki/Ernest_Hemingway",
-  },
-  "Of Mice and Men": {
-    title: "Of Mice and Men",
-    author: "John Steinbeck",
-    bookLink: "https://isbndb.com/book/9780142000670",
-    authorLink: "https://en.wikipedia.org/wiki/John_Steinbeck",
+  "Crime and Punishment": {
+    title: "Crime and Punishment",
+    author: "Fyodor Dostoevsky",
+    bookLink: "https://isbndb.com/book/9780679734505",
+    authorLink: "https://isbndb.com/author/Fyodor%20Dostoevsky",
   },
 };
 
@@ -56,12 +56,12 @@ export const technologies: TechnologyProps = {
     description: "declarative package manager",
     link: "https://nixos.org/",
   },
-  selfHosting: {
+  "self hosting": {
     name: "self hosting",
     description: "self sufficient technology management",
     link: "https://selfh.st/",
   },
-  webDev: {
+  "web development": {
     name: "web development",
     description: "next.js in particular",
     link: "https://nextjs.org/",

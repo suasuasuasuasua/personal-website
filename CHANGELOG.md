@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 0.2.6 (2025-02-13)
+
+### Fix
+
+- updated computers and whatnot on the tech page
+
 ## 0.2.5 (2024-12-20)
 
 ### Fix

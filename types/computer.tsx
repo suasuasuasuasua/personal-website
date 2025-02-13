@@ -16,5 +16,5 @@ interface ComputerSpecs {
 interface ComputerMetaProps {
   name: string;
   description: string;
-  link: string;
+  link?: string;
 }
