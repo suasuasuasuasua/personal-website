@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 0.2.7 (2025-03-10)
+
+### Fix
+
+- update NixOS version to 24.11
+
 ## 0.2.6 (2025-02-13)
 
 ### Fix
