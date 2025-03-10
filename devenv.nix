@@ -2,26 +2,26 @@
   # https://devenv.sh/packages/
   packages = with pkgs;
     [
-      nixpkgs-fmt
-      nixfmt-rfc-style
-      markdownlint-cli
-
+      # source control
       git
+      commitizen
+
+      # gpg signing
       gnupg
       pinentry-curses
-      commitizen
+
+      # github actions
       act
 
-      fastfetch
-      onefetch
-      tree
+      # languages linters and formatters
+      nixfmt-rfc-style
+      markdownlint-cli
     ]
     ++ (with nodePackages; [vercel]);
 
   languages.javascript = {
     enable = true;
 
-    npm.enable = true;
     pnpm = {
       enable = true;
       install.enable = true;
