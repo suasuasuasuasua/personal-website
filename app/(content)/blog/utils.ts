@@ -31,10 +31,15 @@ export function sanitizeSlug(slug: string): string {
 // Sanitize the tag parameter
 export function sanitizeTag(tag: string): string {
   // Remove any HTML tags and limit special characters
-  return tag
-    .replace(/<[^>]*>/g, "")
-    .replace(/[^a-zA-Z0-9-_]/g, "-")
-    .toLowerCase();
+  let sanitizedTag = tag;
+  let previous;
+  do {
+    previous = sanitizedTag;
+    sanitizedTag = sanitizedTag
+      .replace(/<[^>]*>/g, "") // Remove HTML tags
+      .replace(/[^a-zA-Z0-9-_]/g, "-"); // Replace special characters
+  } while (sanitizedTag !== previous);
+  return sanitizedTag.toLowerCase();
 }
 
 /**
