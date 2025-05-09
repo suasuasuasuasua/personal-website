@@ -10,7 +10,7 @@ export interface BlogPost {
   date: string;
   tags: string[];
   readingTime?: string;
-  content?: any;
+  content?: string | Record<string, unknown>;
 }
 
 export interface TableOfContents {

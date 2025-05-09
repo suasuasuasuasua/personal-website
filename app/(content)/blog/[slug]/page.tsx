@@ -10,9 +10,12 @@ import path from "path";
 export default async function BlogPost({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const { slug } = params;
+  // Await the params promise to get the slug
+  const resolvedParams = await params;
+  const { slug } = resolvedParams;
+
   const fullPath = path.join(
     process.cwd(),
     "app/(content)/blog/posts",
@@ -56,6 +59,7 @@ export default async function BlogPost({
       </div>
     );
   } catch (error) {
+    console.error("Error reading file:", error);
     notFound();
   }
 }

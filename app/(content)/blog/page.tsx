@@ -5,13 +5,17 @@ import Link from "next/link";
 
 const POSTS_PER_PAGE = 5;
 
-export default function BlogPage({
+export default async function BlogPage({
   searchParams,
 }: {
-  searchParams: { page?: string };
+  searchParams: Promise<{ page?: string }>;
 }) {
+  // Await the params promise to get the page
+  const resolvedParams = await searchParams;
+  const { page } = resolvedParams;
+
   const posts = getAllPosts();
-  const currentPage = Number(searchParams.page) || 1;
+  const currentPage = Number(page) || 1;
   const start = (currentPage - 1) * POSTS_PER_PAGE;
   const end = start + POSTS_PER_PAGE;
   const totalPages = Math.ceil(posts.length / POSTS_PER_PAGE);

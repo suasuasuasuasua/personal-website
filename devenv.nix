@@ -22,6 +22,7 @@
   languages.javascript = {
     enable = true;
 
+    npm.enable = true;
     pnpm = {
       enable = true;
       install.enable = true;
