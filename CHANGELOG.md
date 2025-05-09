@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 0.4.2 (2025-05-09)
+
+### Fix
+
+- attempt to address XSS
+
 ## 0.4.1 (2025-05-09)
 
 ### Fix
