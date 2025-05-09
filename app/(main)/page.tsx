@@ -59,7 +59,7 @@ export default function Home() {
             />
           </Section>
 
-          <Section title="Current Technologies">
+          <Section title="Technologies">
             <ItemList
               items={technologies}
               renderItem={tech => (
