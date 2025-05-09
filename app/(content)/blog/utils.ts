@@ -162,6 +162,7 @@ export function getAllPosts(): BlogPost[] {
           metadataMatch[1]
             .replace(/(['"])?([a-zA-Z0-9_]+)(['"])?\s*:/g, '"$2": ') // Ensure valid JSON property names
             .replace(/'/g, '"') // Replace single quotes with double quotes
+            .replace(/,(\s*[}\]])/g, "$1") // Remove trailing commas
         );
 
         // Validate and sanitize metadata fields
