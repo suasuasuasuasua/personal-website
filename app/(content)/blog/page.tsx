@@ -1,4 +1,4 @@
-import { getAllPosts } from "./utils";
+import { getAllPosts, sanitizeSlug } from "./utils";
 import Tags from "@/components/blog/tags";
 import Section from "@/components/section";
 import Link from "next/link";
@@ -28,8 +28,8 @@ export default async function BlogPage({
         <div className="space-y-8">
           {/* Display paginated posts */}
           {paginatedPosts.map(post => (
-            <article key={post.slug} className="space-y-2">
-              <Link href={`/blog/${post.slug}`}>
+            <article key={sanitizeSlug(post.slug)} className="space-y-2">
+              <Link href={`/blog/${sanitizeSlug(post.slug)}`}>
                 <h2 className="text-xl font-semibold hover:underline">
                   {post.title}
                 </h2>

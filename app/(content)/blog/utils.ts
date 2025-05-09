@@ -22,6 +22,21 @@ export interface TableOfContents {
   level: number;
 }
 
+// Sanitize URL parameters
+export function sanitizeSlug(slug: string): string {
+  // Only allow alphanumeric characters, hyphens, and underscores
+  return slug.replace(/[^a-zA-Z0-9-_]/g, "").toLowerCase();
+}
+
+// Sanitize the tag parameter
+export function sanitizeTag(tag: string): string {
+  // Remove any HTML tags and limit special characters
+  return tag
+    .replace(/<[^>]*>/g, "")
+    .replace(/[^a-zA-Z0-9-_]/g, "-")
+    .toLowerCase();
+}
+
 /**
  * Calculate estimated reading time for a piece of content
  * @param {string} content - The text content to analyze
@@ -93,6 +108,8 @@ function getGitDates(filePath: string): {
       lastEdited: lastCommit || new Date().toISOString(),
     };
   } catch (error) {
+    console.error("Error getting git dates:", error);
+
     // If git commands fail or file isn't in git, return current date for both
     const now = new Date().toISOString();
     return {

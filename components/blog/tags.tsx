@@ -1,16 +1,20 @@
+import { sanitizeTag } from "@/app/(content)/blog/utils";
 import Link from "next/link";
 
-export default function Tags({ tags }: { tags: string[] }) {
+type Props = {
+  tags: string[];
+};
+
+export default function Tags({ tags }: Props) {
   return (
-    // Display tags as a list of links
     <div className="flex flex-wrap gap-2">
       {tags.map(tag => (
         <Link
-          key={tag}
-          href={`/blog/tags/${tag}`}
-          className="rounded-full bg-blue-100 px-2 py-1 text-sm text-blue-700 hover:bg-blue-200 dark:bg-blue-900 dark:text-blue-100"
+          key={sanitizeTag(tag)}
+          href={`/blog/tags/${sanitizeTag(tag)}`}
+          className="rounded-full bg-gray-100 px-2 py-1 text-sm text-gray-800 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
         >
-          #{tag}
+          {tag}
         </Link>
       ))}
     </div>

@@ -1,7 +1,12 @@
-import { getAllPosts } from "../../utils";
-import Tags from "@/components/blog/tags";
+import {
+  BlogPost,
+  getAllPosts,
+  sanitizeSlug,
+  sanitizeTag,
+} from "@/app/(content)/blog/utils";
 import Section from "@/components/section";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 export default async function TagPage({
   params,
@@ -11,19 +16,23 @@ export default async function TagPage({
   // Await the params promise to get the tag
   const resolvedParams = await params;
   const { tag } = resolvedParams;
+  const sanitizedTag = sanitizeTag(tag);
 
-  const posts = getAllPosts();
-  // Filter posts by the tag from the URL
-  const filteredPosts = posts.filter(post => post.tags.includes(tag));
+  const posts = getAllPosts().filter((post: BlogPost) =>
+    post.tags.map((tag: string) => sanitizeTag(tag)).includes(sanitizedTag)
+  );
+
+  if (posts.length === 0) {
+    notFound();
+  }
 
   return (
-    <div className="mx-auto mb-8 w-11/12 space-y-4 md:w-8/12 lg:w-7/12">
-      <Section title={`Posts tagged with "${tag}"`}>
+    <div className="mx-auto mb-8 w-11/12 space-y-8 md:w-8/12 lg:w-7/12">
+      <Section title={`Posts tagged "${sanitizedTag}"`}>
         <div className="space-y-8">
-          {/* Display filtered posts */}
-          {filteredPosts.map(post => (
-            <article key={post.slug} className="space-y-2">
-              <Link href={`/blog/${post.slug}`}>
+          {posts.map((post: BlogPost) => (
+            <article key={sanitizeSlug(post.slug)} className="space-y-2">
+              <Link href={`/blog/${sanitizeSlug(post.slug)}`}>
                 <h2 className="text-xl font-semibold hover:underline">
                   {post.title}
                 </h2>
@@ -34,7 +43,6 @@ export default async function TagPage({
                 <span>{post.readingTime}</span>
               </div>
               <p className="text-gray-700">{post.description}</p>
-              <Tags tags={post.tags} />
             </article>
           ))}
         </div>

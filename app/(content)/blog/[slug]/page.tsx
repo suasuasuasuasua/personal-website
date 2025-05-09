@@ -1,4 +1,9 @@
-import { generateTableOfContents, getReadingTime, getAllPosts } from "../utils";
+import {
+  generateTableOfContents,
+  getReadingTime,
+  getAllPosts,
+  sanitizeSlug,
+} from "../utils";
 import TableOfContents from "@/components/blog/table-of-contents";
 import Tags from "@/components/blog/tags";
 import Section from "@/components/section";
@@ -18,12 +23,13 @@ function formatDate(dateStr: string) {
 export default async function BlogPost({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const { slug } = params;
+  const { slug } = await params;
+  const sanitizedSlug = sanitizeSlug(slug);
 
   // Get post data including git dates
-  const post = getAllPosts().find(post => post.slug === slug);
+  const post = getAllPosts().find(post => post.slug === sanitizedSlug);
   if (!post) {
     notFound();
   }
@@ -31,7 +37,7 @@ export default async function BlogPost({
   const fullPath = path.join(
     process.cwd(),
     "app/(content)/blog/posts",
-    `${slug}.mdx`
+    `${sanitizedSlug}.mdx`
   );
 
   try {
