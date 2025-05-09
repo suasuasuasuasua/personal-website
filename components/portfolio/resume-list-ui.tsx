@@ -1,6 +1,7 @@
 "use client";
 
 import { GitHubRelease } from "@/types/github";
+import { MDXRemote } from "next-mdx-remote/rsc";
 
 function formatDate(date: Date): string {
   return new Intl.DateTimeFormat("en-US", {
@@ -46,7 +47,6 @@ export function ResumeListUI({ releases }: ResumeListUIProps) {
   );
 
   return (
-    // Show the latest resume
     <div className="space-y-8">
       {latestPdfUrl && (
         <div className="space-y-4">
@@ -61,6 +61,11 @@ export function ResumeListUI({ releases }: ResumeListUIProps) {
               Download Latest
             </a>
           </div>
+          {latestRelease.body && (
+            <div className="prose prose-slate max-w-none rounded-lg border p-4 dark:prose-invert">
+              <MDXRemote source={latestRelease.body} />
+            </div>
+          )}
         </div>
       )}
 
@@ -71,7 +76,6 @@ export function ResumeListUI({ releases }: ResumeListUIProps) {
           <div key={monthYear} className="space-y-4">
             <h3 className="text-xl font-medium text-gray-700">{monthYear}</h3>
             <div className="space-y-4">
-              {/* group the resumes by month and year */}
               {monthReleases.map(release => {
                 const pdfAsset = release.assets.find(asset =>
                   asset.name.endsWith(".pdf")
@@ -79,11 +83,11 @@ export function ResumeListUI({ releases }: ResumeListUIProps) {
                 if (!pdfAsset) return null;
 
                 return (
-                  <div
+                  <details
                     key={release.tag_name}
-                    className="rounded-lg border p-4 transition hover:bg-gray-50"
+                    className="group rounded-lg border transition"
                   >
-                    <div className="flex items-center justify-between">
+                    <summary className="flex cursor-pointer items-center justify-between p-4 hover:bg-gray-50">
                       <div className="space-y-1">
                         <h4 className="text-lg font-medium">
                           Version {release.tag_name}
@@ -97,16 +101,39 @@ export function ResumeListUI({ releases }: ResumeListUIProps) {
                           {formatDate(new Date(release.published_at))}
                         </p>
                       </div>
-                      <a
-                        href={pdfAsset.browser_download_url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="rounded border px-3 py-1 text-sm transition hover:bg-gray-100"
-                      >
-                        Download
-                      </a>
-                    </div>
-                  </div>
+                      <div className="flex items-center gap-4">
+                        <a
+                          href={pdfAsset.browser_download_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="rounded border px-3 py-1 text-sm transition hover:bg-gray-100"
+                          onClick={e => e.stopPropagation()}
+                        >
+                          Download
+                        </a>
+                        <svg
+                          className="h-5 w-5 rotate-0 transform text-gray-500 transition-transform group-open:rotate-180"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 9l-7 7-7-7"
+                          />
+                        </svg>
+                      </div>
+                    </summary>
+                    {release.body && (
+                      <div className="border-t p-4">
+                        <div className="prose prose-slate max-w-none dark:prose-invert">
+                          <MDXRemote source={release.body} />
+                        </div>
+                      </div>
+                    )}
+                  </details>
                 );
               })}
             </div>
