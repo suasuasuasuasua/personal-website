@@ -1,6 +1,8 @@
 import { execSync } from "child_process";
 import fs from "fs";
 import path from "path";
+// Sanitize the tag parameter
+import sanitizeHtml from "sanitize-html";
 
 const postsDirectory = path.join(process.cwd(), "app/(content)/blog/posts");
 
@@ -27,9 +29,6 @@ export function sanitizeSlug(slug: string): string {
   // Only allow alphanumeric characters, hyphens, and underscores
   return slug.replace(/[^a-zA-Z0-9-_]/g, "").toLowerCase();
 }
-
-// Sanitize the tag parameter
-import sanitizeHtml from "sanitize-html";
 
 export function sanitizeTag(tag: string): string {
   // Use sanitize-html to remove unsafe HTML and limit special characters
@@ -127,34 +126,74 @@ function getGitDates(filePath: string): {
  * @returns {BlogPost[]} Array of blog posts with metadata, sorted by date descending
  */
 export function getAllPosts(): BlogPost[] {
-  const fileNames = fs.readdirSync(postsDirectory);
+  // Ensure we're only reading from the designated posts directory
+  const normalizedPostsDirectory = path.normalize(postsDirectory);
+  if (!fs.existsSync(normalizedPostsDirectory)) {
+    throw new Error("Posts directory does not exist");
+  }
+
+  const fileNames = fs.readdirSync(normalizedPostsDirectory);
   const allPosts = fileNames
+    .filter(fileName => fileName.endsWith(".mdx")) // Only process .mdx files
     .map(fileName => {
-      const slug = fileName.replace(/\.mdx$/, "");
-      const fullPath = path.join(postsDirectory, fileName);
+      const slug = sanitizeSlug(fileName.replace(/\.mdx$/, ""));
+      const fullPath = path.join(normalizedPostsDirectory, fileName);
+
+      // Validate the full path is still within the posts directory
+      const normalizedFullPath = path.normalize(fullPath);
+      if (!normalizedFullPath.startsWith(normalizedPostsDirectory)) {
+        throw new Error("Invalid file path detected");
+      }
+
       const fileContents = fs.readFileSync(fullPath, "utf8");
 
-      // Extract metadata from the MDX file
-      const metadata = fileContents.match(
-        /export const metadata = ({[\s\S]*?})/
-      )?.[1];
-      if (!metadata) {
+      // Extract metadata using a safer regex pattern and JSON parsing
+      const metadataMatch = fileContents.match(
+        /export\s+const\s+metadata\s*=\s*({[\s\S]*?});/
+      );
+
+      if (!metadataMatch?.[1]) {
         throw new Error(`No metadata found in ${fileName}`);
       }
 
-      const { title, description, date, tags = [] } = eval(`(${metadata})`);
-      const gitDates = getGitDates(fullPath);
+      try {
+        // Parse metadata as JSON instead of using eval
+        const metadata = JSON.parse(
+          metadataMatch[1]
+            .replace(/(['"])?([a-zA-Z0-9_]+)(['"])?\s*:/g, '"$2": ') // Ensure valid JSON property names
+            .replace(/'/g, '"') // Replace single quotes with double quotes
+        );
 
-      return {
-        slug,
-        title,
-        description,
-        date,
-        firstPosted: gitDates.firstPosted,
-        lastEdited: gitDates.lastEdited,
-        tags,
-        readingTime: getReadingTime(fileContents),
-      };
+        // Validate and sanitize metadata fields
+        const title = sanitizeHtml(metadata.title || "", {
+          allowedTags: [],
+          allowedAttributes: {},
+        });
+        const description = sanitizeHtml(metadata.description || "", {
+          allowedTags: [],
+          allowedAttributes: {},
+        });
+        const date = new Date(metadata.date).toISOString();
+        const tags = (metadata.tags || []).map((tag: string) =>
+          sanitizeTag(tag)
+        );
+
+        const gitDates = getGitDates(fullPath);
+
+        return {
+          slug,
+          title,
+          description,
+          date,
+          firstPosted: gitDates.firstPosted,
+          lastEdited: gitDates.lastEdited,
+          tags,
+          readingTime: getReadingTime(fileContents),
+        };
+      } catch (error) {
+        console.error(`Error parsing metadata in ${fileName}:`, error);
+        throw new Error(`Invalid metadata format in ${fileName}`);
+      }
     })
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
