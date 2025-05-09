@@ -1,4 +1,4 @@
-import { albums, books, technologies, os } from "@/app/nows";
+import { albums, books, technologies, os } from "@/app/(main)/nows";
 import ItemList from "@/components/item-list";
 import Album from "@/components/now/album";
 import Book from "@/components/now/book";

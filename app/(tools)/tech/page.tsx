@@ -1,11 +1,15 @@
-import computers from "@/app/tech/computers";
+import computers from "@/app/(tools)/tech/computers";
 import {
   desktopAccessories,
   wearables,
   devices,
   headphones,
-} from "@/app/tech/devices";
-import { devSoftware, cliSoftware, genSoftware } from "@/app/tech/software";
+} from "@/app/(tools)/tech/devices";
+import {
+  devSoftware,
+  cliSoftware,
+  genSoftware,
+} from "@/app/(tools)/tech/software";
 import ItemList from "@/components/item-list";
 import Section from "@/components/section";
 import Computer from "@/components/tech/computer";

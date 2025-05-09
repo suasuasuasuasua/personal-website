@@ -1,5 +1,5 @@
-import { emails } from "@/app/about/emails";
-import { faq } from "@/app/about/faq";
+import { emails } from "@/app/(main)/about/emails";
+import { faq } from "@/app/(main)/about/faq";
 import Answer from "@/components/about/answer";
 import Email from "@/components/about/email";
 import Question from "@/components/about/question";
