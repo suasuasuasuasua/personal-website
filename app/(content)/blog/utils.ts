@@ -29,16 +29,14 @@ export function sanitizeSlug(slug: string): string {
 }
 
 // Sanitize the tag parameter
+import sanitizeHtml from "sanitize-html";
+
 export function sanitizeTag(tag: string): string {
-  // Remove any HTML tags and limit special characters
-  let sanitizedTag = tag;
-  let previous;
-  do {
-    previous = sanitizedTag;
-    sanitizedTag = sanitizedTag
-      .replace(/<[^>]*>/g, "") // Remove HTML tags
-      .replace(/[^a-zA-Z0-9-_]/g, "-"); // Replace special characters
-  } while (sanitizedTag !== previous);
+  // Use sanitize-html to remove unsafe HTML and limit special characters
+  const sanitizedTag = sanitizeHtml(tag, {
+    allowedTags: [], // Disallow all HTML tags
+    allowedAttributes: {}, // Disallow all attributes
+  }).replace(/[^a-zA-Z0-9-_]/g, "-"); // Replace special characters
   return sanitizedTag.toLowerCase();
 }
 
