@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 0.4.0 (2025-05-09)
+
+### Feat
+
+- **portfolio**: added last edited date on each post
+
 ## 0.3.0 (2025-05-09)
 
 ### Feat
