@@ -1,3 +1,4 @@
+import { execSync } from "child_process";
 import fs from "fs";
 import path from "path";
 
@@ -8,6 +9,8 @@ export interface BlogPost {
   title: string;
   description: string;
   date: string;
+  firstPosted?: string;
+  lastEdited?: string;
   tags: string[];
   readingTime?: string;
   content?: string | Record<string, unknown>;
@@ -65,6 +68,41 @@ export function getAllPostSlugs(): string[] {
 }
 
 /**
+ * Get git history dates for a file
+ * @param {string} filePath - Path to the file
+ * @returns {{ firstPosted: string, lastEdited: string }} Object containing the first commit and last modified dates
+ */
+function getGitDates(filePath: string): {
+  firstPosted: string;
+  lastEdited: string;
+} {
+  try {
+    // Get the first commit date (creation date)
+    const firstCommit = execSync(
+      `git log --follow --format=%aI --reverse "${filePath}" | head -n 1`,
+      { encoding: "utf-8" }
+    ).trim();
+
+    // Get the last commit date (last modified)
+    const lastCommit = execSync(`git log -1 --format=%aI "${filePath}"`, {
+      encoding: "utf-8",
+    }).trim();
+
+    return {
+      firstPosted: firstCommit || new Date().toISOString(),
+      lastEdited: lastCommit || new Date().toISOString(),
+    };
+  } catch (error) {
+    // If git commands fail or file isn't in git, return current date for both
+    const now = new Date().toISOString();
+    return {
+      firstPosted: now,
+      lastEdited: now,
+    };
+  }
+}
+
+/**
  * Get all blog posts with metadata
  * @returns {BlogPost[]} Array of blog posts with metadata, sorted by date descending
  */
@@ -85,12 +123,15 @@ export function getAllPosts(): BlogPost[] {
       }
 
       const { title, description, date, tags = [] } = eval(`(${metadata})`);
+      const gitDates = getGitDates(fullPath);
 
       return {
         slug,
         title,
         description,
         date,
+        firstPosted: gitDates.firstPosted,
+        lastEdited: gitDates.lastEdited,
         tags,
         readingTime: getReadingTime(fileContents),
       };
