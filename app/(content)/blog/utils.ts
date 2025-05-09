@@ -1,8 +1,13 @@
 import { execSync } from "child_process";
 import fs from "fs";
 import path from "path";
-// Sanitize the tag parameter
+// Sanitize-html is used to prevent XSS attacks by cleaning user input
 import sanitizeHtml from "sanitize-html";
+
+// Cache for storing blog posts to improve performance
+let cachedPosts: BlogPost[] | null = null;
+let lastCacheUpdate = 0;
+const CACHE_TTL = 5 * 60 * 1000; // 5 minutes cache TTL
 
 const postsDirectory = path.join(process.cwd(), "app/(content)/blog/posts");
 
@@ -24,18 +29,27 @@ export interface TableOfContents {
   level: number;
 }
 
-// Sanitize URL parameters
+/**
+ * Sanitizes URL slugs to prevent path traversal attacks and ensure valid URLs.
+ * This is crucial for security as slugs are used in file paths and URLs.
+ * - Prevents directory traversal attacks by removing path-breaking characters
+ * - Ensures consistent URL-safe format
+ */
 export function sanitizeSlug(slug: string): string {
-  // Only allow alphanumeric characters, hyphens, and underscores
   return slug.replace(/[^a-zA-Z0-9-_]/g, "").toLowerCase();
 }
 
+/**
+ * Sanitizes tags to prevent XSS attacks and ensure consistent formatting.
+ * - Removes all HTML tags to prevent script injection
+ * - Removes special characters that could be used for attacks
+ * - Ensures tags are URL-safe and consistently formatted
+ */
 export function sanitizeTag(tag: string): string {
-  // Use sanitize-html to remove unsafe HTML and limit special characters
   const sanitizedTag = sanitizeHtml(tag, {
-    allowedTags: [], // Disallow all HTML tags
-    allowedAttributes: {}, // Disallow all attributes
-  }).replace(/[^a-zA-Z0-9-_]/g, "-"); // Replace special characters
+    allowedTags: [], // Blocks all HTML tags to prevent XSS
+    allowedAttributes: {}, // Blocks all HTML attributes
+  }).replace(/[^a-zA-Z0-9-_]/g, "-");
   return sanitizedTag.toLowerCase();
 }
 
@@ -122,10 +136,17 @@ function getGitDates(filePath: string): {
 }
 
 /**
- * Get all blog posts with metadata
- * @returns {BlogPost[]} Array of blog posts with metadata, sorted by date descending
+ * Gets all blog posts with metadata. Implements caching for performance.
+ * - Caches results to avoid frequent filesystem reads
+ * - Sanitizes all user-generated content to prevent XSS
+ * - Validates file paths to prevent directory traversal
  */
 export function getAllPosts(): BlogPost[] {
+  // Return cached posts if they're still valid
+  if (cachedPosts && Date.now() - lastCacheUpdate < CACHE_TTL) {
+    return cachedPosts;
+  }
+
   // Ensure we're only reading from the designated posts directory
   const normalizedPostsDirectory = path.normalize(postsDirectory);
   if (!fs.existsSync(normalizedPostsDirectory)) {
@@ -134,20 +155,22 @@ export function getAllPosts(): BlogPost[] {
 
   const fileNames = fs.readdirSync(normalizedPostsDirectory);
   const allPosts = fileNames
-    .filter(fileName => fileName.endsWith(".mdx")) // Only process .mdx files
+    .filter(fileName => fileName.endsWith(".mdx"))
     .map(fileName => {
       const slug = sanitizeSlug(fileName.replace(/\.mdx$/, ""));
       const fullPath = path.join(normalizedPostsDirectory, fileName);
 
-      // Validate the full path is still within the posts directory
+      // Security: Validate the full path is within the posts directory
       const normalizedFullPath = path.normalize(fullPath);
       if (!normalizedFullPath.startsWith(normalizedPostsDirectory)) {
-        throw new Error("Invalid file path detected");
+        throw new Error(
+          "Invalid file path detected - possible path traversal attempt"
+        );
       }
 
       const fileContents = fs.readFileSync(fullPath, "utf8");
 
-      // Extract metadata using a safer regex pattern and JSON parsing
+      // Extract metadata using a safer regex pattern
       const metadataMatch = fileContents.match(
         /export\s+const\s+metadata\s*=\s*({[\s\S]*?});/
       );
@@ -157,15 +180,15 @@ export function getAllPosts(): BlogPost[] {
       }
 
       try {
-        // Parse metadata as JSON instead of using eval
+        // Parse metadata safely as JSON instead of using eval
         const metadata = JSON.parse(
           metadataMatch[1]
             .replace(/(['"])?([a-zA-Z0-9_]+)(['"])?\s*:/g, '"$2": ') // Ensure valid JSON property names
-            .replace(/'/g, '"') // Replace single quotes with double quotes
-            .replace(/,(\s*[}\]])/g, "$1") // Remove trailing commas
+            .replace(/'/g, '"')
+            .replace(/,(\s*[}\]])/g, "$1")
         );
 
-        // Validate and sanitize metadata fields
+        // Sanitize all user-provided content
         const title = sanitizeHtml(metadata.title || "", {
           allowedTags: [],
           allowedAttributes: {},
@@ -175,9 +198,7 @@ export function getAllPosts(): BlogPost[] {
           allowedAttributes: {},
         });
         const date = new Date(metadata.date).toISOString();
-        const tags = (metadata.tags || []).map((tag: string) =>
-          sanitizeTag(tag)
-        );
+        const tags = (metadata.tags || []).map(sanitizeTag);
 
         const gitDates = getGitDates(fullPath);
 
@@ -197,6 +218,10 @@ export function getAllPosts(): BlogPost[] {
       }
     })
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+  // Update cache
+  cachedPosts = allPosts;
+  lastCacheUpdate = Date.now();
 
   return allPosts;
 }

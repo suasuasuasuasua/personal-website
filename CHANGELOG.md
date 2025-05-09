@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 0.4.4 (2025-05-09)
+
+### Perf
+
+- faster blog using cache
+
 ## 0.4.3 (2025-05-09)
 
 ### Fix
