@@ -18,6 +18,6 @@ const config: Config = {
     // Disable hover for mobile devices
     hoverOnlyWhenSupported: true,
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };
 export default config;

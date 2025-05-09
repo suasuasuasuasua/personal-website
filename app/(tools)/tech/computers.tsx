@@ -22,7 +22,7 @@ export const computers: ComputerProps = {
     specs: {
       os: {
         icon: SiNixos,
-        name: "NixOS 25.05 (unstable)",
+        name: "NixOS 24.11 (stable)",
       },
     },
     meta: {
@@ -39,7 +39,7 @@ export const computers: ComputerProps = {
     specs: {
       os: {
         icon: SiNixos,
-        name: "NixOS 25.05 (unstable)",
+        name: "NixOS 24.11 (stable)",
       },
     },
     meta: {
@@ -55,7 +55,7 @@ export const computers: ComputerProps = {
     specs: {
       os: {
         icon: SiNixos,
-        name: "NixOS 25.05 (unstable)",
+        name: "NixOS 24.11 (stable)",
       },
     },
     meta: {

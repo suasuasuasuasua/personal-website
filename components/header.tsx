@@ -4,7 +4,7 @@ import HeaderEntry from "@/types/headerEntry";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { CiCircleChevUp } from "react-icons/ci";
+import { RiArrowUpSFill } from "react-icons/ri";
 
 // Define the header elements as well as the root path and label
 const headers: HeaderEntry = {
@@ -57,7 +57,7 @@ export default function Header() {
                 >
                   {value.label}
                 </Link>
-                <CiCircleChevUp
+                <RiArrowUpSFill
                   className={`${pathname === key ? "block" : "hidden"}`}
                 />
               </div>
