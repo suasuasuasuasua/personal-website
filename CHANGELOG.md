@@ -1,5 +1,23 @@
 # CHANGELOG
 
+## 0.3.0 (2025-05-09)
+
+### Feat
+
+- **portfolio**: added portfolio page
+- added blog!
+- add ItemList and Section components; refactor About, Home, and Tech pages
+
+### Refactor
+
+- rearrange using groups
+
+## 0.2.7 (2025-03-10)
+
+### Fix
+
+- update NixOS version to 24.11
+
 ## 0.2.6 (2025-02-13)
 
 ### Fix

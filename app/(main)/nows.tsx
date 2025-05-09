@@ -15,24 +15,6 @@ export const albums: AlbumProps = {
     artistLink:
       "https://open.spotify.com/artist/4TEK9tIkcoxib4GxT3O4ky?si=RM2MZ7fSREG0xgWXm5v2Dg",
   },
-  "IVE EMPATHY": {
-    title: "IVE EMPATHY",
-    artist: "IVE",
-    albumLink: "https://open.spotify.com/album/7vwi3kXdpkaRO3if4N2gBN",
-    artistLink: "https://open.spotify.com/artist/6RHTUrRF63xao58xh9FXYJ",
-  },
-  DRIP: {
-    title: "DRIP",
-    artist: "BABYMONSTER",
-    albumLink: "https://open.spotify.com/album/6Lp82GTJXzgtIopT0g7N7k",
-    artistLink: "https://open.spotify.com/artist/1SIocsqdEefUTE6XKGUiVS",
-  },
-  Bewitched: {
-    title: "Bewitched",
-    artist: "Laufey",
-    albumLink: "https://open.spotify.com/album/1rpCHilZQkw84A3Y9czvMO",
-    artistLink: "https://open.spotify.com/artist/7gW0r5CkdEUMm42w9XpyZO",
-  },
   "Piano Concerto No. 2 in C Minor, Op. 18": {
     title: "Piano Concerto No. 2 in C Minor, Op. 18",
     artist: "Sergei Rachmaninoff",
@@ -42,11 +24,11 @@ export const albums: AlbumProps = {
 };
 
 export const books: BookProps = {
-  "Crime and Punishment": {
-    title: "Crime and Punishment",
-    author: "Fyodor Dostoevsky",
-    bookLink: "https://isbndb.com/book/9780679734505",
-    authorLink: "https://isbndb.com/author/Fyodor%20Dostoevsky",
+  "Invisible Cities": {
+    title: "Invisible Cities",
+    author: "Italo Calvino",
+    bookLink: "https://isbndb.com/book/9780544133204",
+    authorLink: "https://isbndb.com/author/Italo%20Calvino",
   },
 };
 
@@ -63,7 +45,7 @@ export const technologies: TechnologyProps = {
   },
   "web development": {
     name: "web development",
-    description: "next.js in particular",
+    description: "next.js",
     link: "https://nextjs.org/",
   },
 };
