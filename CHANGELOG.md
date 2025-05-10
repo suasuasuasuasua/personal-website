@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 0.4.5 (2025-05-10)
+
+### Fix
+
+- use relative datetime instead of ISO
+
 ## 0.4.4 (2025-05-09)
 
 ### Perf
