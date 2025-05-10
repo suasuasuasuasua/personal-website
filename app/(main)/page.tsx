@@ -98,7 +98,7 @@ export default function Home() {
                     </h2>
                   </Link>
                   <div className="flex items-center space-x-4 text-sm text-gray-500">
-                    <time>{post.date}</time>
+                    <time>{new Date(post.date).toLocaleTimeString()}</time>
                     <span>•</span>
                     <span>{post.readingTime}</span>
                   </div>
