@@ -1,24 +1,13 @@
 # Personal Website
 
-| [![CodeQL](https://github.com/suasuasuasuasua/personal-website/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/suasuasuasuasua/personal-website/actions/workflows/github-code-scanning/codeql) | [![Generate changelog](https://github.com/suasuasuasuasua/personal-website/actions/workflows/changelog.yml/badge.svg)](https://github.com/suasuasuasuasua/personal-website/actions/workflows/changelog.yml) |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-
-Hi, this is my personal website! I'm currently between classical web development
-with html, css, and javascript and modern web development with Next.js and
-React.
+Hi, this is my personal website!
 
 ## Tech Stack
 
 - `nix` to setup the [development machine](#developer-workflow)
-- [Next.js](https://nextjs.org) for the [React](https://react.dev) framework
-- [tailwindcss](https://tailwindcss.com)
-  - [headless ui](https://headlessui.com/) as a complimentary `tailwindcss` UI
-    library
+- `11ty` as the static site generator
 - [pnpm](https://pnpm.io) for the package manager
-  - [eslint](https://eslint.org) for the `js[x]` and `ts[x]` linter
   - [prettier](https://prettier.io) for the general formatter
-  - [font awesome icons](https://fontawesome.com) which are
-    [set up for React and Next.js](https://docs.fontawesome.com/web/use-with/react)
 - Deploying (currently) on [Vercel](https://vercel.com) at
   [sua.sh](https://sua.sh)
 
@@ -120,3 +109,4 @@ name provider.
 Each commit to `main` will be to the production website, and pushes to other
 branches will be to preview websites. See each build and deployment status under
 the `deployment` tab.
+
