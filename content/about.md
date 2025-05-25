@@ -4,6 +4,7 @@ const eleventyNavigation = {
 	order: 3
 };
 ---
+
 # About
 
 Hi! My name is Justin Hoang. I am a graduate from Colorado School of Mines. I
