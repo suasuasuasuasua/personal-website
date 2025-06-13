@@ -2,6 +2,7 @@
 title: Understand the Blog Template
 description: What code did I copy anyway?
 date: 2025-05-23
+draft: true
 tags:
   - web-development
 ---
@@ -185,12 +186,62 @@ website and author. This was easy to fill in.
 
 ## `_includes/`
 
+This is a folder with template files for rendering the `html` pages. This blog
+starter pack uses `nunjucks` (`.njk`). The language is a bit _archaic_ in my
+opinion, but the idea is that it's a combination of `html` and some `njk` logic
+that helps you generate web-pages.
+
+For example, we have one file called `postslist.njk` which lists all the blog
+[posts](https://www.sua.sh/blog). There are another three files under `layouts/`
+called `base.njk`, `home.njk`, `post.njk` which are pretty self explanatory.
+
+The `nunjucks` files themselves somewhat read like `html`, but they also have
+special _logic_ for iterating over collections, getting time, accessing
+attributes, etc.
+
 ## `content/`
+
+The `content/` directory is where I will be primarily working, particularly
+under `blog/` as I write posts. This directory has more `.njk` files that define
+pages like [tags](https://www.sua.sh/tags/), the
+[index](https://www.sua.sh/index.html), and more. This directory seems like a
+step up above the `_includes` folder with higher level logic and organization.
 
 ### `blog/`
 
+This is where all my blog posts will be. I am currently writing them in markdown
+(`.md`) for simplicity. They will be organized by date. Currently, the slug
+contains the entire filename, but I would like to change it to organize by year,
+month, and date in the future. Also, I would like to enumerate the posts so I
+can easily count how many I have and allow for easier navigation.
+
+Again, not sure how easy this is to achieve, but it would be a nice stretch goal
+and quality of life improvement.
+
+Note that the blog posts can really be in any directory. They just need to have
+the preamble to be included in the [posts
+collection](https://www.11ty.dev/docs/collections/).
+
 ### `feed/`
+
+The feed folder has data for an `rss` feed to my blog posts. You can use
+something like [miniflux](https://miniflux.app/) to subscribe.
+
+## `drafts/`
+
+I will be putting my drafts under this folder as I am writing them. I just
+learned that all I have to do is add `draft: true` to the preamble block so that
+the pre-processor can skip this file. It will still be compiled in development,
+but not during a build.
 
 ## `css/`
 
+The CSS folder is pretty straightforward. It controls the styling of the
+website. I probably won't be messing around with this too much in the beginning
+stages, so my website will look rather plain.
+
 ## `public/`
+
+The public folder will contain images and other assets in use throughout the
+website. Currently, there is nothing there, but I have left a `.gitkeep` as a
+placeholder until I do.
