@@ -27,6 +27,10 @@ tags:
 
 # Top Level Configuration
 
+I am going to be looking at the repo at [this point in
+time](https://github.com/suasuasuasuasua/personal-website/tree/c40e1abe6a76de1c11a43f0b870a9186cc33145a)
+(called a hash).
+
 ## `devenv.nix`
 
 I use [`devenv`](https://devenv.sh/) to define per-project development shells.
@@ -140,11 +144,44 @@ use devenv
 If this feels sus, that's fine. You don't have to use `direnv`, and if you are,
 you can just disable it in the directory with `direnv block`.
 
+## `.eleventy.config.js`
+
+I think this is the most important file of the website. In here, we setup 11ty
+just how we need it according to the [specs](https://www.11ty.dev/docs/config/).
+From what I understand, we add many plugins for the blog, setup pre-processors
+for drafts, copy folders (like `public/`) around, add watch targets, templating
+files, and more.
+
 # Folders
 
 ## `_config/`
 
+There is a single file here called `filters.js`. From what I can tell, this file
+is used to define helper filter functions for the blog posts. Inside of
+`eleventy.config.js`, we import and add that file (the exported function) as a
+plugin.
+
+According to [11ty](https://www.11ty.dev/docs/plugins/), plugins are "custom
+code that Eleventy can import into a project from an external repository."
+That's really cool! So that means that we can extend Eleventy in many different
+ways, and there is support for doing that locally or from someone else's code
+online. At the top of `eleventy.config.js`, there's a block of imports from
+`@11ty`, which are a bunch of different plugins that make the blog _a blog_. I
+won't dive into what each plugin does right now, but I'll do more research along
+the way.
+
 ## `_data/`
+
+This folder is _global_ data that is exposed to every template in the [11ty
+project](https://www.11ty.dev/docs/data-global/). I think this is really neat
+because we can ensure consistency across all the web-pages without horribly
+hardcoding everything.
+
+There are two files in this folder: `eleventyDataScheme.js` and `metadata.js`.
+I'm not one hundred percent sure about the first file, but it seems to do
+something with validating draft content. I'm not even sure _how_ to make draft
+content in the first place. The second file defines some metadata about the
+website and author. This was easy to fill in.
 
 ## `_includes/`
 
