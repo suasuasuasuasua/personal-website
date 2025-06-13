@@ -1,32 +1,30 @@
 ---
 title: Understand the Blog Template
 description: What code did I copy anyway?
-date: 2025-05-23
-draft: true
+date: 2025-06-13
+edited: 2025-06-13
 tags:
   - web-development
 ---
 
 <!--toc:start-->
-- [Top Level Configuration](#top-level-configuration)
-  - [`devenv.nix`](#devenvnix)
-  - [`package.json`](#packagejson)
-  - [`treefmt.toml`](#treefmttoml)
-  - [`.devcontainer.json`](#devcontainerjson)
-  - [`.editorconfig`](#editorconfig)
-  - [`.envrc`](#envrc)
-- [Folders](#folders)
-  - [`_config/`](#config)
-  - [`_data/`](#data)
-  - [`_includes/`](#includes)
-  - [`content/`](#content)
-    - [`blog/`](#blog)
-    - [`feed/`](#feed)
-  - [`css/`](#css)
-  - [`public/`](#public)
+- [`devenv.nix`](#devenvnix)
+- [`package.json`](#packagejson)
+- [`treefmt.toml`](#treefmttoml)
+- [`.devcontainer.json`](#devcontainerjson)
+- [`.editorconfig`](#editorconfig)
+- [`.envrc`](#envrc)
+- [`.eleventy.config.js`](#eleventyconfigjs)
+- [`_config/`](#config)
+- [`_data/`](#data)
+- [`_includes/`](#includes)
+- [`content/`](#content)
+  - [`blog/`](#blog)
+  - [`feed/`](#feed)
+- [`drafts/`](#drafts)
+- [`css/`](#css)
+- [`public/`](#public)
 <!--toc:end-->
-
-# Top Level Configuration
 
 I am going to be looking at the repo at [this point in
 time](https://github.com/suasuasuasuasua/personal-website/tree/c40e1abe6a76de1c11a43f0b870a9186cc33145a)
@@ -35,15 +33,15 @@ time](https://github.com/suasuasuasuasua/personal-website/tree/c40e1abe6a76de1c1
 ## `devenv.nix`
 
 I use [`devenv`](https://devenv.sh/) to define per-project development shells.
-The packages come from [`nixpkgs`](https://github.com/NixOS/nixpkgs), the
-largest package repository in the world. Since `devenv` uses `nix` and `nixpkgs`
-under the hood, you get two important benefits: 1) a reproducible build with the
-lockfile (`devenv.lock`) and 2) an elegant way to define all dependencies in a
-unified interface.
+The packages come from [`nixpkgs`](https://github.com/NixOS/nixpkgs). Since
+`devenv` uses `nix` and `nixpkgs` under the hood, you get two important
+benefits: 1) a reproducible build with the lockfile (`devenv.lock`) and 2) an
+elegant way to define all dependencies in a unified interface.
 
 You might be thinking, "doesn't `package-lock.json`" do that for you already?
 Yes, but only for the project dependencies. This does nothing for external
-tooling and programs.
+tooling and programs. Is this overkill for a personal website? Maybe. But it
+scratches the OCD in my brain.
 
 In the `devenv.nix`, you'll find declarations for packages, languages,
 git-hooks, and more. As an aside, `devenv` has a long list of features like
@@ -81,13 +79,12 @@ of.
 
 ```
 
-Admittedly, this is something that _I_ added and was not in the template
-repository. I do think that it's worth mentioning because it's so cool (and
-because I learned about it a few months ago when I made the full transition to
-NixOS and nix-darwin). I would use a pure
+This is something that _I_ added and was not in the template repository. I do
+think that it's worth mentioning because it's so cool (and because I'm such a
+fan for it). I would use a pure
 [`flake.nix`](https://wiki.nixos.org/wiki/Flakes) `devShell`, but I've found
 that it can be tricky and you'll often spend more time debugging the flake file
-than actually doing useful work.
+than actually doing useful work. Maybe that's just a skill issue.
 
 ## `package.json`
 
@@ -113,10 +110,10 @@ dependency isolation and reproducibility. The base image also uses `nix` and
 reads from the `devenv.nix` and `devenv.lock` files, so I thought that was
 funny. It's like a double condom of safety.
 
-devcontainers are super easy to do [in
+`devcontainers` are super easy to do [in
 VSCode](https://code.visualstudio.com/docs/devcontainers/containers). I've been
-trying to get [`remote-nvim`](https://github.com/amitds1997/remote-nvim.nvim)
-to work, but it's been finicky because I'm using
+trying to get [`remote-nvim`](https://github.com/amitds1997/remote-nvim.nvim) to
+work, but it's been finicky because I'm using
 [`nixvim`](https://github.com/nix-community/nixvim) on NixOS and nix-darwin
 machines (probably).
 
@@ -153,8 +150,6 @@ From what I understand, we add many plugins for the blog, setup pre-processors
 for drafts, copy folders (like `public/`) around, add watch targets, templating
 files, and more.
 
-# Folders
-
 ## `_config/`
 
 There is a single file here called `filters.js`. From what I can tell, this file
@@ -164,25 +159,28 @@ plugin.
 
 According to [11ty](https://www.11ty.dev/docs/plugins/), plugins are "custom
 code that Eleventy can import into a project from an external repository."
-That's really cool! So that means that we can extend Eleventy in many different
-ways, and there is support for doing that locally or from someone else's code
-online. At the top of `eleventy.config.js`, there's a block of imports from
-`@11ty`, which are a bunch of different plugins that make the blog _a blog_. I
-won't dive into what each plugin does right now, but I'll do more research along
-the way.
+That's really cool! So that means that we can extend Eleventy in tons of
+different ways, and there is support for doing that locally or from someone
+else's code online. I'll definitely have to spend time researching the plugin
+ecosystem to see what is out there.
+
+At the top of `eleventy.config.js`, there's a block of imports from `@11ty`,
+which are a bunch of different plugins that make the blog _a blog_. I won't dive
+into what each plugin does right now, but I'll do more research along the way.
 
 ## `_data/`
 
 This folder is _global_ data that is exposed to every template in the [11ty
-project](https://www.11ty.dev/docs/data-global/). I think this is really neat
-because we can ensure consistency across all the web-pages without horribly
-hardcoding everything.
+project](https://www.11ty.dev/docs/data-global/). This means we can ensure
+consistency across all the web-pages without horribly hardcoding everything and
+inevitably messing something up.
 
 There are two files in this folder: `eleventyDataScheme.js` and `metadata.js`.
 I'm not one hundred percent sure about the first file, but it seems to do
-something with validating draft content. I'm not even sure _how_ to make draft
-content in the first place. The second file defines some metadata about the
-website and author. This was easy to fill in.
+something with validating whether a post is draft content or not. The second
+file defines some metadata about the website and author. This file was easy to
+fill in, and I'm guessing that I can add literally whatever else property I want
+to track about myself or the website.
 
 ## `_includes/`
 
@@ -202,37 +200,36 @@ attributes, etc.
 ## `content/`
 
 The `content/` directory is where I will be primarily working, particularly
-under `blog/` as I write posts. This directory has more `.njk` files that define
-pages like [tags](https://www.sua.sh/tags/), the
+under `blog/` when I write posts. This directory has more `.njk` files that
+define pages like [tags](https://www.sua.sh/tags/), the
 [index](https://www.sua.sh/index.html), and more. This directory seems like a
 step up above the `_includes` folder with higher level logic and organization.
+You can either write `md` files with the `js` preamble to identify the page; or,
+if you need additional `nunjucks` logic, you can do that instead.
 
 ### `blog/`
 
-This is where all my blog posts will be. I am currently writing them in markdown
-(`.md`) for simplicity. They will be organized by date. Currently, the slug
-contains the entire filename, but I would like to change it to organize by year,
-month, and date in the future. Also, I would like to enumerate the posts so I
-can easily count how many I have and allow for easier navigation.
+This is where all my blog posts live. I am currently writing them in markdown
+(`.md`) for simplicity. They will be organized by date in year, month, and day
+order. Currently, the slug contains the entire filename which I don't like. I
+would like to enumerate the posts so I can easily count how many I have and
+allow for easier navigation. Also, I want something like the tags page but for
+the year, month, and date respectively.
 
 Again, not sure how easy this is to achieve, but it would be a nice stretch goal
-and quality of life improvement.
+and quality of life improvement as I write more and more posts.
 
-Note that the blog posts can really be in any directory. They just need to have
-the preamble to be included in the [posts
-collection](https://www.11ty.dev/docs/collections/).
-
-### `feed/`
-
-The feed folder has data for an `rss` feed to my blog posts. You can use
-something like [miniflux](https://miniflux.app/) to subscribe.
-
-## `drafts/`
+#### `drafts/`
 
 I will be putting my drafts under this folder as I am writing them. I just
 learned that all I have to do is add `draft: true` to the preamble block so that
 the pre-processor can skip this file. It will still be compiled in development,
 but not during a build.
+
+### `feed/`
+
+The feed folder has data for an `rss` feed to my blog posts. You can use
+something like [miniflux](https://miniflux.app/) to subscribe.
 
 ## `css/`
 
