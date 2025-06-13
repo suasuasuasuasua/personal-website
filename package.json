@@ -1,6 +1,7 @@
 {
   "name": "sua-personal-website",
   "private": true,
+  "type": "module",
   "version": "0.4.5",
   "description": "suasuasuasuasua's personal website",
   "scripts": {
