@@ -2,6 +2,7 @@
 title: First Blog Post [follow-up]
 description: 11ty and Why I'm switching
 date: 2025-05-23
+edited: 2025-05-23
 tags:
   - ai
   - web-development
