@@ -6,6 +6,7 @@ Hi, this is my personal website!
 
 - `nix` to setup the [development machine](#developer-workflow)
 - `11ty` as the static site generator
+  - See [blog template](https://github.com/11ty/eleventy-base-blog)
 - [pnpm](https://pnpm.io) for the package manager
   - [prettier](https://prettier.io) for the general formatter
 - Deploying (currently) on [Vercel](https://vercel.com) at

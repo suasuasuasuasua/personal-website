@@ -27,6 +27,7 @@
     };
   };
 
+  # https://devenv.sh/git-hooks/
   git-hooks.hooks = {
     commitizen.enable = true;
 
