@@ -7,34 +7,43 @@
     Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
 }
 
-/* Theme colors */
+/* Tokyo Night Dark Theme colors */
 :root {
-  --color-gray-20: #e0e0e0;
-  --color-gray-50: #c0c0c0;
-  --color-gray-90: #333;
+  --color-gray-20: #414868;
+  --color-gray-50: #565f89;
+  --color-gray-90: #c0caf5;
 
-  --background-color: #fff;
+  --background-color: #1a1b26;
 
   --text-color: var(--color-gray-90);
-  --text-color-link: #082840;
-  --text-color-link-active: #5f2b48;
-  --text-color-link-visited: #17050f;
+  --text-color-link: #7aa2f7;
+  --text-color-link-active: #bb9af7;
+  --text-color-link-visited: #9d7cd8;
 
   --syntax-tab-size: 2;
+
+  /* Additional Tokyo Night colors for enhanced theming */
+  --color-accent: #7aa2f7;
+  --color-secondary: #bb9af7;
+  --color-success: #9ece6a;
+  --color-warning: #e0af68;
+  --color-error: #f7768e;
+  --color-surface: #24283b;
+  --color-border: #414868;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    --color-gray-20: #e0e0e0;
-    --color-gray-50: #c0c0c0;
-    --color-gray-90: #dad8d8;
+    /* Light mode fallback - keeping Tokyo Night inspired but lighter */
+    --color-gray-20: #565f89;
+    --color-gray-50: #414868;
+    --color-gray-90: #24283b;
 
-    /* --text-color is assigned to --color-gray-_ above */
-    --text-color-link: #1493fb;
-    --text-color-link-active: #6969f7;
-    --text-color-link-visited: #a6a6f8;
-
-    --background-color: #15202b;
+    --background-color: #d5d6db;
+    --text-color: var(--color-gray-90);
+    --text-color-link: #166775;
+    --text-color-link-active: #8c4351;
+    --text-color-link-visited: #5a4b75;
   }
 }
 
@@ -188,9 +197,17 @@ pre:not([class*="language-"]) {
   word-spacing: normal;
   word-break: normal;
   overflow-x: auto;
+  background-color: var(--color-surface);
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid var(--color-border);
 }
 code {
   word-break: break-all;
+  background-color: var(--color-surface);
+  padding: 0.125em 0.25em;
+  border-radius: 2px;
+  font-size: 0.875em;
 }
 
 /* Header */
