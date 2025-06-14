@@ -6,6 +6,8 @@
 			<time class="postlist-date" datetime="{{ post.data.publishedDate | htmlDateString }}">
 				{{post.data.publishedDate | readableDate("LLLL yyyy") }}
 			</time>
+		{%- else %}
+			<p class="postlist-date">no date given</p>
 		{%- endif %}
 	</li>
 {%- endfor %}
