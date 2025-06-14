@@ -7,7 +7,19 @@ layout: layouts/base.njk
 <h1>{{ title }}</h1>
 
 <ul class="post-metadata">
-  <li><time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></li>
+  <!-- only add the published date if given -->
+  {%- if draft %}
+    <li><b style="background-color:yellow;">draft: </b></li>
+  {%- endif %}
+  {%- if publishedDate %}
+    <li><time datetime="{{ publishedDate | htmlDateString }}">{{ publishedDate | readableDate }}</time></li>
+  {%- else %}
+    <li><em>No publish date specified...</em></li>
+  {%- endif %}
+  <!-- only add the "edited:" if dates are different -->
+  {%- if publishedDate and publishedDate != page.date %}
+    <li><time datetime="{{ page.date | htmlDateString }}">(Rev: {{ page.date | readableDate }})</time></li>
+  {%- endif %}
   {%- for tag in tags | filterTagList %}
   {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
   <li><a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>{%- if not loop.last %}, {% endif %}</li>

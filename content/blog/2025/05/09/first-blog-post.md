@@ -1,8 +1,8 @@
 ---
 title: First Blog Post
 description: My first blog post
-date: 2025-05-09
-edited: 2025-05-09
+date: git Last Modified
+publishedDate: 2025-05-09
 tags:
   - ai
   - web-development

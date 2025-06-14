@@ -1,8 +1,8 @@
 ---
 title: Understand the Blog Template
 description: What code did I copy anyway?
-date: 2025-06-13
-edited: 2025-06-13
+date: git Last Modified
+publishedDate: 2025-06-13
 tags:
   - web-development
 ---
@@ -242,3 +242,9 @@ stages, so my website will look rather plain.
 The public folder will contain images and other assets in use throughout the
 website. Currently, there is nothing there, but I have left a `.gitkeep` as a
 placeholder until I do.
+
+---
+
+Overall, the blog template isn't too difficult to understand. Everything feels
+very logical and intuitive. The biggest challenge for me right now is just
+figuring out the `11ty` ecosystem and idiomatic ways to do things.
