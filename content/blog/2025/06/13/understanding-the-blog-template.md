@@ -76,7 +76,6 @@ of.
     treefmt.enable = true;
   };
 }
-
 ```
 
 This is something that _I_ added and was not in the template repository. I do
