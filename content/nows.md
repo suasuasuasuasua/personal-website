@@ -1,11 +1,13 @@
 ---js
 const eleventyNavigation = {
  key: "Nows",
- order: 4
+ order: 3
 }
 ---
 
 # Nows
+
+Here are my current interests that have been keeping me busy.
 
 - Configuration (Hell)
   - [Neovim](https://github.com/suasuasuasuasua/nixvim)
