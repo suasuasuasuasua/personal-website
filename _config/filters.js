@@ -42,4 +42,9 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("sortAlphabetically", (strings) =>
     (strings || []).sort((b, a) => b.localeCompare(a))
   )
+
+  // Filter to remove posts with the title "Template"
+  eleventyConfig.addFilter("filterTemplates", function filterTemplates(posts) {
+    return (posts || []).filter((post) => ["Template"].indexOf(post.data.title) === -1)
+  })
 }
