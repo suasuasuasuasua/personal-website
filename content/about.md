@@ -37,9 +37,8 @@ which are things I never would have learned in school or in the tech world.
 
 ## Contact
 
-- [Custom](mailto:j124.dev@sua.sh)
-- [Gmail](mailto:justinhoang124@gmail.com)
-- [Proton](mailto:j124.dev@pm.me)
+- [justinhoang@sua.sh](mailto:justinhoang@sua.sh)
+- [business@sua.sh](mailto:business@sua.sh)
 
 ## Documents
 
