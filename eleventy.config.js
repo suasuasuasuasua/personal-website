@@ -76,7 +76,7 @@ export default async function (eleventyConfig) {
 		},
 		metadata: {
 			language: "en",
-			title: "suasuasuasuasua",
+			title: "sua",
 			subtitle: "my personal website",
 			base: "https://sua.sh",
 			author: {

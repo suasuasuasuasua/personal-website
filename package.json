@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "version": "0.4.5",
-  "description": "suasuasuasuasua's personal website",
+  "description": "sua's personal website",
   "scripts": {
     "build": "pnpm exec eleventy",
     "build-nocolor": "cross-env NODE_DISABLE_COLORS=1 pnpm exec eleventy",

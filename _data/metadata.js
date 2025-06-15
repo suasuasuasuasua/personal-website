@@ -1,5 +1,5 @@
 export default {
-  title: "suasuasuasuasua",
+  title: "sua",
   url: "https://sua.sh",
   language: "en",
   description: "my personal website",
