@@ -6,6 +6,6 @@ export default {
   author: {
     name: "Justin Hoang",
     email: "j124.dev@proton.me",
-    url: "http://sua.sh/about",
+    url: "https://sua.sh/about",
   },
 }
