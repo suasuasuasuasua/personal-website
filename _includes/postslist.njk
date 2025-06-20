@@ -7,7 +7,7 @@
 				{{post.data.publishedDate | readableDate("LLLL yyyy") }}
 			</time>
 		{%- else %}
-			<p class="postlist-date">no date given</p>
+			<time class="postlist-date">no date given</time>
 		{%- endif %}
 	</li>
 {%- endfor %}
