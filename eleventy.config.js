@@ -78,7 +78,7 @@ export default async function (eleventyConfig) {
 			language: "en",
 			title: "sua",
 			subtitle: "my personal website",
-			base: "https://sua.sh",
+			base: "https://blog.sua.sh",
 			author: {
 				name: "Justin Hoang"
 			}

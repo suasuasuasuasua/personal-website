@@ -21,7 +21,7 @@
   "author": {
     "name": "Justin Hoang",
     "email": "j124.dev@proton.me",
-    "url": "https://sua.sh/"
+    "url": "https://blog.sua.sh/"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.0",

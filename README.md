@@ -10,11 +10,11 @@ Hi, this is my personal website!
 - [pnpm](https://pnpm.io) for the package manager
   - [prettier](https://prettier.io) for the general formatter
 - Deploying (currently) on [Vercel](https://vercel.com) at
-  [sua.sh](https://sua.sh)
+  [blog.sua.sh](https://blog.sua.sh)
 
 ## Project Workflow
 
-Currently, I have the production website at [sua.sh](https://sua.sh) and the
+Currently, I have the production website at [blog.sua.sh](https://blog.sua.sh) and the
 preview website at [sua-drafts.vercel.app](https://sua-drafts.vercel.app). The
 production website is tied directly to
 [main](https://github.com/suasuasuasuasua/personal-website/tree/main), while the
