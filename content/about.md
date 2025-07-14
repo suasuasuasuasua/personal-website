@@ -29,6 +29,7 @@ which are things I never would have learned in school or in the tech world.
 
 - [Blog](https://blog.sua.sh)
   - [RSS Feed](https://blog.sua.sh/feed/feed.xml)
+- [Bluesky](https://bsky.app/profile/sua.sh)
 - [GitHub](https://github.com/suasuasuasuasua)
 - [GoodReads](https://www.goodreads.com/user/show/94077403-justino)
 - [Last.fm](https://www.last.fm/user/therealsua)
