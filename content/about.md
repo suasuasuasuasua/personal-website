@@ -38,7 +38,6 @@ which are things I never would have learned in school or in the tech world.
 ## Contact
 
 - [justinhoang@sua.sh](mailto:justinhoang@sua.sh)
-- [business@sua.sh](mailto:business@sua.sh)
 
 ## Documents
 
