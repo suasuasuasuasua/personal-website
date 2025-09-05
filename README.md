@@ -72,7 +72,7 @@ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix 
 Use [`devenv`](https://devenv.sh) and [`direnv`](https://direnv.net) to install
 and load the developer shell with all the tooling built in.
 
-I recommend using [`neovim`](https://neovim.io) or
+I recommend using [`Neovim`](https://Neovim.io) or
 [`vscode`](https://code.visualstudio.com) with the
 [devcontainer extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
 for the text editor.
