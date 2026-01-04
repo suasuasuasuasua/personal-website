@@ -9,8 +9,9 @@ Hi, this is my personal website!
 
 ## Project Workflow
 
-I'm drafting small issues and pull requests that merge into the staging branch.
-When I've made significant enough progress, I'll merge back staging into main.
+I'm drafting small issues and pull requests that squash merge into the staging branch.
+When I've made significant enough progress, I'll rebase and fast-forward back
+the staging branch into main.
 
 ```mermaid
 ---
@@ -43,11 +44,10 @@ gitGraph
 
 ### Installation
 
-First, install `nix` from
-[Determinate Systems](https://determinate.systems/posts/determinate-nix-installer/).
-
-Next, use [`direnv`](https://direnv.net) to install and load the developer shell
-with all the tooling built in.
+First, install `nix` from [Determinate
+Systems](https://determinate.systems/posts/determinate-nix-installer/). Next,
+use [`direnv`](https://direnv.net) to install and load the developer shell with
+all the tooling built in.
 
 I recommend using [`neovim`](https://Neovim.io) or
 [`vscode`](https://code.visualstudio.com) with the [devcontainer
