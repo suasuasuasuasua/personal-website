@@ -4,6 +4,7 @@ pkgs.mkShellNoCC {
   buildInputs = self.checks.${pkgs.system}.pre-commit-check.enabledPackages;
 
   packages = with pkgs; [
+    commitizen
     git
     hugo
     just
