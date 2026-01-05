@@ -1,8 +1,9 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-theme = 'ananke'
-title = 'My New Hugo Site'
+baseURL = "https://sua.sh/"
+enableGitInfo = true
+languageCode = "en-us"
+theme = "ananke"
+title = "blog"
 
 [caches]
 [caches.images]
-dir = ':cacheDir/images'
+dir = ":cacheDir/images"
