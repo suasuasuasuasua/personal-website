@@ -1,7 +1,7 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://sua.sh/'
 languageCode = 'en-us'
 theme = 'ananke'
-title = 'My New Hugo Site'
+title = 'blog'
 
 [caches]
 [caches.images]
