@@ -1,7 +1,6 @@
 baseURL = "https://sua.sh/"
 enableGitInfo = true
 languageCode = "en-us"
-theme = "ananke"
 title = "blog"
 
 [caches]
