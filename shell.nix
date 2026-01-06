@@ -6,6 +6,7 @@ pkgs.mkShellNoCC {
   packages = with pkgs; [
     commitizen
     git
+    go_1_25
     hugo
     just
   ];
