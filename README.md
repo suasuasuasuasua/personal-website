@@ -1,5 +1,7 @@
 # Personal Website
 
+[![Build and deploy](https://github.com/suasuasuasuasua/personal-website/actions/workflows/hugo.yaml/badge.svg?branch=main)](https://github.com/suasuasuasuasua/personal-website/actions/workflows/hugo.yaml)
+
 Hi, this is my personal website!
 
 ## Tech Stack
