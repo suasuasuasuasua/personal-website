@@ -21,7 +21,7 @@ operating system(s) that I am running, any interesting self-hosted services, and
 future plans.
 
 At the time of writing, my homelab is still very modest, consisting of only two
-main computers. No server racks just yet...
+main computers.
 
 ![my current homelab](./IMG_1494.webp)
 
@@ -137,3 +137,11 @@ availability services.
 
 The exact configuration, at the time of writing, can be [found
 here](https://github.com/suasuasuasuasua/nixos-config/blob/aad799a2f4a52863c6baaedd5c70ce5182fd20ba/configurations/nixos/pi/README.md).
+
+## Other
+
+I don't have any other fancy gear besides these two servers. Everything else is
+pretty standard equipment that I got from my dad. I'm still running 1GB CAT5e
+ethernet cables and a single unmanaged switch. I'm not sure how important it is
+for me yet to build a server rack with patch panels and rack mounted servers and
+equipment. Though it looks cool, it is way overkill for my use case.
