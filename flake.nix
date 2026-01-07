@@ -28,7 +28,9 @@
     in
     {
       #  for `nix fmt`
-      formatter = forAllSystems (system: treefmtEval.${pkgs.${system}.system}.config.build.wrapper);
+      formatter = forAllSystems (
+        system: treefmtEval.${pkgs.${system}.stdenv.hostPlatform.system}.config.build.wrapper
+      );
 
       devShells = forAllSystems (system: {
         default = import ./shell.nix {
@@ -39,7 +41,7 @@
 
       checks = forAllSystems (system: {
         # for `nix flake check`
-        formatting = treefmtEval.${pkgs.${system}.system}.config.build.check self;
+        formatting = treefmtEval.${pkgs.${system}.stdenv.hostPlatform.system}.config.build.check self;
         pre-commit-check = git-hooks.lib.${system}.run {
           src = ./.;
           imports = [ ./git-hooks.nix ];
