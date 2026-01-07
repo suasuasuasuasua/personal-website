@@ -114,9 +114,9 @@ here](https://github.com/suasuasuasuasua/nixos-config/blob/aad799a2f4a52863c6baa
 I am running a standard Raspberry Pi 4b 2GB.
 
 > I originally bought this computer for a college class on building sensor
-> systems. The idea was could connect hardware like sensors, buttons, etc. to
-> the GPIO pins on the RPI and do cool experiments. At the time in 2021, the Pi
-> was about $100, give or take.
+> systems. The idea was to connect hardware like sensors, buttons, etc. to the
+> GPIO pins on the RPI and do cool experiments. At the time in 2021, the Pi was
+> about $100, give or take.
 
 Given its hardware limitations, it can only run lightweight services. The
 compute is so weak that it can't run NixOS rebuilds on its own. I offload that
