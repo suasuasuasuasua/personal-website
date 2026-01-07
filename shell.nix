@@ -1,7 +1,10 @@
 { self, pkgs, ... }:
+let
+  inherit (pkgs.stdenv.hostPlatform) system;
+in
 pkgs.mkShellNoCC {
-  inherit (self.checks.${pkgs.system}.pre-commit-check) shellHook;
-  buildInputs = self.checks.${pkgs.system}.pre-commit-check.enabledPackages;
+  inherit (self.checks.${system}.git-hooks-check) shellHook;
+  buildInputs = self.checks.${system}.git-hooks-check.enabledPackages;
 
   packages = with pkgs; [
     commitizen
