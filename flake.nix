@@ -20,27 +20,27 @@
         "aarch64-linux"
         "aarch64-darwin"
       ];
-      forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
-      pkgs = forAllSystems (system: nixpkgs.legacyPackages.${system});
+      forEachSystem = f: nixpkgs.lib.genAttrs supportedSystems (system: f pkgsFor.${system});
+      pkgsFor = nixpkgs.lib.genAttrs supportedSystems (system: nixpkgs.legacyPackages.${system});
 
       # Eval the treefmt modules from ./treefmt.nix
-      treefmtEval = forAllSystems (system: (treefmt-nix.lib.evalModule pkgs.${system} ./treefmt.nix));
+      treefmtEval = forEachSystem (pkgs: treefmt-nix.lib.evalModule pkgs ./treefmt.nix);
     in
     {
       #  for `nix fmt`
-      formatter = forAllSystems (system: treefmtEval.${pkgs.${system}.system}.config.build.wrapper);
+      formatter = forEachSystem (
+        pkgs: treefmtEval.${pkgs.stdenv.hostPlatform.system}.config.build.wrapper
+      );
 
-      devShells = forAllSystems (system: {
+      devShells = forEachSystem (pkgs: {
         default = import ./shell.nix {
-          inherit self;
-          pkgs = pkgs.${system};
+          inherit pkgs self;
         };
       });
 
-      checks = forAllSystems (system: {
-        # for `nix flake check`
-        formatting = treefmtEval.${pkgs.${system}.system}.config.build.check self;
-        pre-commit-check = git-hooks.lib.${system}.run {
+      checks = forEachSystem (pkgs: {
+        formatting = treefmtEval.${pkgs.stdenv.hostPlatform.system}.config.build.check self;
+        git-hooks-check = git-hooks.lib.${pkgs.stdenv.hostPlatform.system}.run {
           src = ./.;
           imports = [ ./git-hooks.nix ];
         };
