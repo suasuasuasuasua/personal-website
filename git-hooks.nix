@@ -8,6 +8,7 @@
     end-of-file-fixer.enable = true;
     markdownlint.enable = true;
     nixfmt-rfc-style.enable = true;
+    prettier.enable = true;
     trim-trailing-whitespace.enable = true;
     vale.enable = true;
   };
