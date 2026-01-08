@@ -1,3 +1,4 @@
+---
 extends: existence
 level: warning
 link: https://redhat-documentation.github.io/vale-at-red-hat/reference-guide.html#heading-punctuation
