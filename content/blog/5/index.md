@@ -63,7 +63,7 @@ The specs are as follows:
 
 > There are five SATA slots, but I have only populated three of them so far.
 
-______________________________________________________________________
+---
 
 This server runs pretty much everything in my self-hosted service stack.
 
@@ -77,7 +77,7 @@ This server runs pretty much everything in my self-hosted service stack.
   - VPN server
 - ...
 
-______________________________________________________________________
+---
 
 I do have a few regrets about the system after a year of using it.
 
