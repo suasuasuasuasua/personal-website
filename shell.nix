@@ -8,10 +8,12 @@ pkgs.mkShellNoCC {
 
   packages = with pkgs; [
     commitizen
+    dart-sass
     git
     go_1_25
     hugo
     just
+    nodejs-slim_24
     vale
   ];
 }
