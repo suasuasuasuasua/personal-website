@@ -18,6 +18,7 @@
     };
     nixfmt.enable = pkgs.lib.meta.availableOn pkgs.stdenv.buildPlatform pkgs.nixfmt-rfc-style.compiler;
     nixfmt.package = pkgs.nixfmt-rfc-style;
+    prettier.enable = true;
     taplo.enable = true;
     yamlfmt.enable = true;
   };
