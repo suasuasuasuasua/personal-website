@@ -1,3 +1,4 @@
+---
 extends: existence
 level: suggestion
 message: "Separate words by underscores in user-replaced values."
