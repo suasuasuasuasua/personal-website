@@ -11,10 +11,14 @@
     just.enable = true;
     mdformat = {
       enable = true;
-      plugins = ps: [ ps.mdformat-frontmatter ];
+      plugins = ps: [
+        ps.mdformat-frontmatter
+        ps.mdformat-simple-breaks
+      ];
     };
     nixfmt.enable = pkgs.lib.meta.availableOn pkgs.stdenv.buildPlatform pkgs.nixfmt-rfc-style.compiler;
     nixfmt.package = pkgs.nixfmt-rfc-style;
+    prettier.enable = true;
     taplo.enable = true;
     yamlfmt.enable = true;
   };

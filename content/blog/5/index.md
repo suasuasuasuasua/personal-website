@@ -20,8 +20,8 @@ been my biggest hobby for the past year. Later in a future post, I'll cover the
 operating system(s) that I am running, any interesting self-hosted services, and
 future plans.
 
-At the time of writing, my homelab is still very modest, consisting of only two
-main computers.
+At the time of writing, my homelab is still modest, consisting of only two main
+computers.
 
 ![my current homelab](./IMG_1494.webp)
 
@@ -42,28 +42,29 @@ server idles at around 10W.
 
 The specs are as follows:
 
-1. Motherboard: ASUS ROG Strix B760-l
+1. System board: ASUS ROG Strix B760-l
    - ITX board
    - Supports modern hardware up to 14th gen CPUs, DDR5 memory, and PCIe 5.0
    - 4 SATA ports (most ITX boards either come with 0 or 2)
 1. CPU: i3-14100
    - Low power draw and decent performance
-1. RAM: 2x16GB 4800MHz
+1. RAM: 2×16GB 4800MHz
    - Good amount of memory, but not too overkill
    - Note that memory speed is limited by CPU choice
 1. Chassis: Jonsbo N2
    - Mini ITX form factor
    - Built-in HDD/SSD compartments
 1. Storage
-   - ZFS filesystem for deduplication and redundancy
-   - Root filesystem running 2x2TB NVME SSDs (2TB usable)
-   - Shared filesystem running 3x4TB HDDs (8TB usable)
+   - ZFS filesystem for de-duplication and redundancy
+   - Root filesystem running 2×2TB NVME SSDs (2TB usable)
+   - Shared filesystem running 3×4TB HDDs (8TB usable)
 
 ![the lab storage solution](./IMG_1497.webp)
 
-> There are five SATA slots, but I have only populated three of them so far.
+> The case bay are five SATA slots, but I have only populated three of them so
+> far.
 
-______________________________________________________________________
+---
 
 This server runs pretty much everything in my self-hosted service stack.
 
@@ -75,31 +76,30 @@ This server runs pretty much everything in my self-hosted service stack.
   - Music manager and streamer
 - Wireguard
   - VPN server
-- ...
 
-______________________________________________________________________
+---
 
 I do have a few regrets about the system after a year of using it.
 
 - I should have purchased larger storage, just to be safe from data loss in
   future migrations
-  - For instance, 8TB HDDs is the minimum size that I should have gone for just
+  - For example, 8TB HDDs is the minimum size that I should have gone for just
     for its storage density value proposition
   - With my ZFS setup (RAIDz1), I only get 8TB of usable space. If I instead
-    went for a mirror with 2x8TB, I would still get the same amount of usable
+    went for a mirror with 2×8TB, I would still get the same amount of usable
     space
-- I should have bought the 2x32GB memory kit
+- I should have bought the 2×32GB memory kit
   - I didn't know that prices for RAM were going to skyrocket, but in retrospect
     that was the perfect time to parts
   - I am only running into memory issues when I try to run larger Ollama models
     like Gemma3
-  - I am also experimenting with running three separate [minecraft
+  - I am also experimenting with running three separate [Minecraft
     servers](https://github.com/suasuasuasuasua/nixos-config/blob/aad799a2f4a52863c6baaedd5c70ce5182fd20ba/configurations/nixos/lab/services/minecraft-server.nix)
     at the same time. Though I haven't hit any issues yet, I would have better
     peace of mind since these servers can be quite intensive
-- The CPU is great, but sometimes I wish it had more power
+- The CPU is great, but sometimes I want it had more power
   - High compute tasks like rebuilding NixOS configurations can take a while
-  - With the motherboard choice, I am also locked into 14th gen CPUs
+  - With the system board choice, I am also locked into 14th gen CPUs
 - I still need to setup an offsite backup server (like yesterday)
   - Having everything bundled together in one server means I have one point of
     failure. A power outage or hardware failure could corrupt data
@@ -125,7 +125,7 @@ work to my other server.
 The RPI's reliability and low power draw makes it a perfect candidate for high
 availability services.
 
-- Adguard Home
+- AdGuard Home
   - Domain Name Server (DNS)
   - Domain based ad-blocking
 - DuckDNS DDNS client
@@ -142,6 +142,6 @@ here](https://github.com/suasuasuasuasua/nixos-config/blob/aad799a2f4a52863c6baa
 
 I don't have any other fancy gear besides these two servers. Everything else is
 pretty standard equipment that I got from my dad. I'm still running 1GB CAT5e
-ethernet cables and a single unmanaged switch. I'm not sure how important it is
+ethernet cables and a single un-managed switch. I'm not sure how important it is
 for me yet to build a server rack with patch panels and rack mounted servers and
 equipment. Though it looks cool, it is way overkill for my use case.

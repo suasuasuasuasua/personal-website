@@ -12,5 +12,6 @@ pkgs.mkShellNoCC {
     go_1_25
     hugo
     just
+    vale
   ];
 }
