@@ -9,5 +9,6 @@
     markdownlint.enable = true;
     nixfmt-rfc-style.enable = true;
     trim-trailing-whitespace.enable = true;
+    vale.enable = true;
   };
 }
