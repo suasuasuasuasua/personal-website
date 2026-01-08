@@ -1,5 +1,7 @@
 {
   hooks = {
+    action-validator.enable = true;
+    actionlint.enable = true;
     check-merge-conflicts.enable = true;
     commitizen.enable = true;
     deadnix.enable = true;
