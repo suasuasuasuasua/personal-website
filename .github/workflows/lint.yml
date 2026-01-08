@@ -2,6 +2,8 @@ name: Run Flake Linting
 on:
   pull_request:
   push:
+permissions:
+  contents: read
 jobs:
   fmt:
     runs-on: ubuntu-latest
