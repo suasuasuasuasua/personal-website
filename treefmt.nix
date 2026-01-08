@@ -7,7 +7,6 @@
   };
 
   programs = {
-    jsonfmt.enable = true;
     just.enable = true;
     mdformat = {
       enable = true;
@@ -20,6 +19,5 @@
     nixfmt.package = pkgs.nixfmt-rfc-style;
     prettier.enable = true;
     taplo.enable = true;
-    yamlfmt.enable = true;
   };
 }

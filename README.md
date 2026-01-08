@@ -67,5 +67,5 @@ When committing, use
 commit title and subtext to ensure
 [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
-There are also a number of commit hooks set up for
-[pre-commit](https://pre-commit.com) to ensure consistent formatting and style.
+Commit hooks set up for [pre-commit](https://pre-commit.com) to ensure
+consistent formatting and style.
