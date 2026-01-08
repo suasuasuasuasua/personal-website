@@ -20,7 +20,9 @@ Warcraft
 [Vv][Ss][Cc]ode
 [Vv]ercel
 chatbot
+commitizen
 config
+devcontainer
 ethernet
 formatters
 hardcoding
@@ -32,6 +34,7 @@ nixCats
 nixpkgs
 noob
 nvim
+rebase
 repo
 statusline
 sus
