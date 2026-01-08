@@ -8,7 +8,9 @@
     end-of-file-fixer.enable = true;
     markdownlint.enable = true;
     nixfmt-rfc-style.enable = true;
-    prettier.enable = true;
+    # TODO: figure out prettier cause it's having weird interactions with the
+    # other formatters
+    # prettier.enable = true;
     trim-trailing-whitespace.enable = true;
     vale.enable = true;
   };
