@@ -1,3 +1,4 @@
+---
 extends: conditional
 ignorecase: false
 level: suggestion
