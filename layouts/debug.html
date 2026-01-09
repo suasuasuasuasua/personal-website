@@ -2,12 +2,26 @@
 
 <h2>Deployment Status</h2>
 
-Latest
-<a href="{{ $.Site.Params.ghrepo }}deployments">deployment</a> successful on
-<a href="{{ $.Site.Params.ghrepo }}commits/"
-  >{{ os.Getenv "HUGO_LATEST_GIT_HASH" }}</a
->
-on {{ os.Getenv "HUGO_LATEST_GIT_DATE" }}
+<p>
+  Latest
+  <a href="{{ $.Site.Params.ghrepo }}deployments">deployment</a> successful on
+  <a
+    href='{{ $.Site.Params.ghrepo }}commits/{{ os.Getenv "HUGO_LATEST_GIT_HASH"  }}'
+    >{{ os.Getenv "HUGO_LATEST_GIT_HASH" }}</a
+  >
+  on {{ os.Getenv "HUGO_LATEST_GIT_DATE" }}
+</p>
+
+<p>
+  See
+  <a
+    href='{{ $.Site.Params.ghrepo }}compare/{{ os.Getenv
+  "HUGO_LATEST_GIT_HASH" }}...staging'
+    >differences</a
+  >
+  between <a href="{{ $.Site.Params.ghrepo }}/tree/main ">production</a> and
+  <a href="{{ $.Site.Params.ghrepo }}/tree/staging ">staging</a> branches
+</p>
 
 <h2>Hardware</h2>
 
