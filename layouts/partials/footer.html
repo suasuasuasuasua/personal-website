@@ -1,0 +1,41 @@
+<!-- https://github.com/gohugoio/hugoDocs/blob/master/layouts/_partials/layouts/page-edit.html -->
+{{ if not (.Param "hideMadeWithLine") }}
+<div class="print:hidden">
+  <hr class="border-t border-gray-200 dark:border-gray-800 my-10 lg:my-16" />
+
+  <!-- TODO: figure out first updated logic -->
+  <!-- <div class="text-gray-800 dark:text-gray-300 font-semibold"> -->
+  <!--   First updated: -->
+  <!--   {{ .Lastmod.Format "January 2, 2006" }}{{ with .GitInfo }} -->
+  <!--     : -->
+  <!--     {{ range .Ancestors.Reverse | first 1 }} -->
+  <!--       <a -->
+  <!--         class="text-blue-600 hover:text-blue-500" -->
+  <!--         href="{{ $.Site.Params.ghrepo }}commit/{{ .Hash }}" -->
+  <!--         >{{ .Subject }} ({{ .AbbreviatedHash }})</a -->
+  <!--       > -->
+  <!--     {{ end }} -->
+  <!--   {{ end }} -->
+  <!-- </div> -->
+
+  <div class="text-gray-800 dark:text-gray-300 font-semibold">
+    Last updated: {{ .Lastmod.Format "2006-01-02" }}{{ with .GitInfo }} :
+    <a
+      class="text-blue-600 hover:text-blue-500"
+      href="{{ $.Site.Params.ghrepo }}commit/{{ .Hash }}"
+      >{{ .Subject }} ({{ .AbbreviatedHash }})</a
+    >
+    |
+    <a
+      class="text-blue-600 hover:text-blue-500"
+      href="{{ $.Site.Params.ghrepo }}commits/{{ .Hash }}/content/{{ $.Page.File.Path }}"
+      >History</a
+    >
+    {{ end }}
+  </div>
+</div>
+<div>
+  Made with
+  <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</div>
+{{ end }}
