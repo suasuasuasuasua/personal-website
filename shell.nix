@@ -13,7 +13,7 @@ pkgs.mkShellNoCC {
     go_1_25
     hugo
     just
-    nodejs-slim_24
+    nodejs_24
     vale
   ];
 }

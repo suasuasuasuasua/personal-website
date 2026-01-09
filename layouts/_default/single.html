@@ -1,4 +1,4 @@
-{{ define "main" }} {{ if eq .Type "blog" }}{{ if not .Params.menu }}
+{{ define "main" }} {{ if eq .Type "blog" }} {{ if not .Params.menu }}
 <h1>{{ .Title }}</h1>
 <p>
   <i>
@@ -7,11 +7,11 @@
     </time>
   </i>
 </p>
-{{ end }}{{ end }}
+{{ end }} {{ end }}
 <content> {{ .Content }} </content>
 
-{{ if eq .Type "blog" }}{{ if (.Param "enablePostNavigator")}} {{- partial
-"post_navigator.html" . -}} {{ end }}{{ end }} {{ if eq .Type "blog" }}
+{{ if eq .Type "blog" }} {{ if (.Param "enablePostNavigator") }} {{- partial
+"post_navigator.html" . -}} {{ end }} {{ end }} {{ if eq .Type "blog" }}
 <p>
   {{ range (.GetTerms "tags") }}
   <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
@@ -20,4 +20,4 @@
 {{ end }}
 
 <!-- page edits with git revision  -->
-{{ if eq .Type "blog" }} {{- partial "page-edit.html" . -}} {{ end }} {{ end }}
+{{ if eq .Type "blog" }}{{- partial "page-edit.html" . -}}{{ end }} {{ end }}
