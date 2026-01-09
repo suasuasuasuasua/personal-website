@@ -1,0 +1,21 @@
+<h1>{{ .Title }}</h1>
+
+<h2>Deployment Status</h2>
+
+Latest
+<a href="{{ $.Site.Params.ghrepo }}deployments">deployment</a> successful on
+<a href="{{ $.Site.Params.ghrepo }}commits/ }}"
+  >{{ os.Getenv "HUGO_LATEST_GIT_HASH" }}</a
+>
+on {{ os.Getenv "HUGO_LATEST_GIT_DATE" }}
+
+<h2>Parameters</h2>
+
+<ul>
+  <li>
+    <code>dart-sass --version</code> {{ os.Getenv "HUGO_DART_SASS_VERSION" }}
+  </li>
+  <li><code>go version</code> {{ os.Getenv "HUGO_GO_VERSION" }}</li>
+  <li><code>hugo version</code> : {{ os.Getenv "HUGO_HUGO_VERSION" }}</li>
+  <li><code>node --version</code> {{ os.Getenv "HUGO_NODE_VERSION" }}</li>
+</ul>
