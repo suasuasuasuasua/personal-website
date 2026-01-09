@@ -1,10 +1,6 @@
 <div>
   <a href="{{ $.Site.Params.ghrepo }}"> GitHub </a>
-  | {{ with hugo.Version }} Built with Hugo
-  <a href="https://github.com/gohugoio/hugo/releases/tag/v{{ . }}">
-    v{{ . }}
-  </a>
-  {{ end }} {{ if not (.Param "hideMadeWithLine") }} | Made with
+  {{ if not (.Param "hideMadeWithLine") }} | Made with
   <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
   {{ end }}
 </div>
