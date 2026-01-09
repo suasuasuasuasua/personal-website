@@ -12,6 +12,7 @@ on {{ os.Getenv "HUGO_LATEST_GIT_DATE" }}
 <h2>Hardware</h2>
 
 <pre>
+  $ uname --kernel-name --nodename --kernel-release --machine --processor --hardware-platform --operating-system
   {{ os.Getenv "HUGO_UNAME" }}
 </pre>
 
