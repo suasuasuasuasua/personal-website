@@ -1,23 +1,34 @@
-{{ define "main" }} {{ if eq .Type "blog" }}{{ if not .Params.menu }}
-<h1>{{ .Title }}</h1>
-<p>
-  <i>
-    <time datetime='{{ .Date.Format "2006-01-02" }}'>
-      {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
-    </time>
-  </i>
-</p>
-{{ end }}{{ end }}
-<content> {{ .Content }} </content>
-
-{{ if eq .Type "blog" }}{{ if (.Param "enablePostNavigator")}} {{- partial
-"post_navigator.html" . -}} {{ end }}{{ end }} {{ if eq .Type "blog" }}
-<p>
-  {{ range (.GetTerms "tags") }}
-  <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
+{{ define "main" }}
+  {{ if eq .Type "blog" }}
+    {{ if not .Params.menu }}
+      <h1>{{ .Title }}</h1>
+      <p>
+        <i>
+          <time datetime="{{ .Date.Format "2006-01-02" }}">
+            {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
+          </time>
+        </i>
+      </p>
+    {{ end }}
   {{ end }}
-</p>
-{{ end }}
+  <content> {{ .Content }} </content>
 
-<!-- page edits with git revision  -->
-{{ if eq .Type "blog" }} {{- partial "page-edit.html" . -}} {{ end }} {{ end }}
+  {{ if eq .Type "blog" }}
+    {{ if (.Param "enablePostNavigator") }}
+      {{- partial
+        "post_navigator.html" .
+      -}}
+    {{ end }}
+  {{ end }}
+  {{ if eq .Type "blog" }}
+    <p>
+      {{ range (.GetTerms "tags") }}
+        <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
+      {{ end }}
+    </p>
+  {{ end }}
+
+
+  <!-- page edits with git revision  -->
+  {{ if eq .Type "blog" }}{{- partial "page-edit.html" . -}}{{ end }}
+{{ end }}
