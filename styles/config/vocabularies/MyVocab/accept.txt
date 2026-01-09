@@ -1,6 +1,7 @@
 CLion
 CPUs?
 HDDs?
+Hoang
 Isengard
 Jonsbo
 Maplestory
