@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   hooks = {
     action-validator.enable = true;
@@ -9,9 +10,9 @@
     markdownlint.enable = true;
     nixfmt-rfc-style.enable = true;
     prettier = {
-      enable = true;
+      enable = false;
       settings.plugins = [
-        "prettier-plugin-go-template"
+        "${pkgs.prettier-plugin-go-template}/lib/node_modules/prettier-plugin-go-template/lib/index.js"
       ];
     };
     trim-trailing-whitespace.enable = true;
