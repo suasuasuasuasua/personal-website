@@ -17,7 +17,12 @@
     };
     nixfmt.enable = pkgs.lib.meta.availableOn pkgs.stdenv.buildPlatform pkgs.nixfmt-rfc-style.compiler;
     nixfmt.package = pkgs.nixfmt-rfc-style;
-    prettier.enable = true;
+    prettier = {
+      enable = true;
+      settings.plugins = [
+        "prettier-plugin-go-template"
+      ];
+    };
     taplo.enable = true;
   };
 }
