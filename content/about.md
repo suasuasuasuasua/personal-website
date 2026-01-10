@@ -31,12 +31,9 @@ which are things I never would have learned in school or in the tech world.
 
 - [Blog](https://sua.sh)
   - [RSS Feed](https://sua.sh/blog/index.xml)
-- [Bluesky](https://bsky.app/profile/sua.sh)
 - [GitHub](https://github.com/suasuasuasuasua)
 - [GoodReads](https://www.goodreads.com/user/show/94077403-justino)
-- [Last.fm](https://www.last.fm/user/therealsua)
 - [LinkedIn](https://www.linkedin.com/in/jhoang124/)
-- [OP.gg](https://op.gg/lol/summoners/na/no%20mistakes-4017)
 
 ## Contact
 
