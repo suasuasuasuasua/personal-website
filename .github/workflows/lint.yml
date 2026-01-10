@@ -24,7 +24,10 @@ jobs:
         run: |
           direnv allow .
           direnv export gha > "$GITHUB_ENV"
-      - name: Flake check
+      - name: Install Node.js dependencies
+        run: |
+          [[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true
+      - name: Flake format
         run: nix fmt
   check:
     runs-on: ubuntu-latest
@@ -45,5 +48,8 @@ jobs:
         run: |
           direnv allow .
           direnv export gha > "$GITHUB_ENV"
+      - name: Install Node.js dependencies
+        run: |
+          [[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true
       - name: Flake check
         run: nix flake check
