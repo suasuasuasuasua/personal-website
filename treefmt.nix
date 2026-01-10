@@ -20,8 +20,7 @@
     prettier = {
       enable = true;
       settings.plugins = [
-        # "${pkgs.prettier-plugin-go-template}/lib/node_modules/prettier-plugin-go-template/lib/index.js"
-        "prettier-plugin-go-template"
+        "${pkgs.prettier-plugin-go-template}/lib/node_modules/prettier-plugin-go-template/lib/index.js"
       ];
     };
     taplo.enable = true;
