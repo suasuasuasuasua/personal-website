@@ -66,15 +66,13 @@
 <details>
   <!-- prettier-ignore -->
   <summary><code>$ cat <a href='{{ $ghrepo }}/blob/{{ $git_hash }}/flake.lock'>flake.lock</a></code></summary>
-  {{ with os.ReadFile "flake.lock" }}
-    {{ highlight (trim . "\n\r") "json" }}
-  {{ end }}
+  {{ with os.ReadFile "flake.lock" }} {{ highlight (trim . "\n\r") "json" }} {{
+  end }}
 </details>
 
 <details>
   <!-- prettier-ignore -->
   <summary><code>$ cat <a href='{{ $ghrepo }}/blob/{{ $git_hash }}/package.json'>package.json</a></code></summary>
-  {{ with os.ReadFile "package.json" }}
-    {{ highlight (trim . "\n\r") "json" }}
+  {{ with os.ReadFile "package.json" }} {{ highlight (trim . "\n\r") "json" }}
   {{ end }}
 </details>
