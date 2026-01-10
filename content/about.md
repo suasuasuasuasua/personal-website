@@ -4,8 +4,10 @@ description: All About Me
 ---
 
 <!--toc:start-->
+
 - [Socials](#socials)
 - [Contact](#contact)
+
 <!--toc:end-->
 
 Hi! My name is Justin Hoang. I am a graduate from Colorado School of Mines in
