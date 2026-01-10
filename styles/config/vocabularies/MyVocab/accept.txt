@@ -15,6 +15,7 @@ Thinkpad
 Warcraft
 [Aa]nsible
 [Ee]leventy
+[Hh]omelab
 [Mm]inecraft
 [Nn]eovim
 [Nn]ixvim
@@ -29,7 +30,6 @@ devcontainer
 ethernet
 formatters
 hardcoding
-homelab
 lockfile
 lol
 miniflux
