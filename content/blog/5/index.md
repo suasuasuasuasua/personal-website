@@ -1,12 +1,9 @@
----
-title: Home Lab Tour - Hardware
-description: What's powering my home?
-date: 2026-01-03T00:00:00-07:00
-tags:
-  - hardware
-  - homelab
-  - linux
----
++++
+title = "Home Lab Tour - Hardware"
+description = "What's powering my home?"
+date = "2026-01-03T00:00:00-07:00"
+tags = [ "hardware", "homelab", "linux" ]
++++
 
 <!--toc:start-->
 
