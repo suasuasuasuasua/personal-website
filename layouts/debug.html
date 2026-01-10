@@ -7,7 +7,8 @@
   <a href="{{ $.Site.Params.ghrepo }}deployments">deployment</a> successful on
   <a
     href='{{ $.Site.Params.ghrepo }}commits/{{ os.Getenv "HUGO_LATEST_GIT_HASH"  }}'
-    >{{ os.Getenv "HUGO_LATEST_GIT_HASH" }}</a
+    >{{ os.Getenv "HUGO_LATEST_GIT_SUBJECT" }} ({{ os.Getenv
+    "HUGO_LATEST_GIT_HASH" }})</a
   >
   on {{ os.Getenv "HUGO_LATEST_GIT_DATE" }}
 </p>
@@ -25,10 +26,31 @@
 
 <h2>Hardware</h2>
 
-<pre>
-  $ uname --kernel-name --nodename --kernel-release --machine --processor --hardware-platform --operating-system
+<p>
+  <details>
+    <summary>
+      <!-- prettier-ignore -->
+      <code>$ uname --kernel-name --nodename --kernel-release --machine --processor --hardware-platform --operating-system</code>
+    </summary>
+    <pre>
   {{ os.Getenv "HUGO_UNAME" }}
-</pre>
+  </pre
+    >
+  </details>
+</p>
+
+<p>
+  <details>
+    <summary>
+      <!-- prettier-ignore -->
+      <code>$ lscpu</code>
+    </summary>
+    <pre>
+    {{ os.Getenv "HUGO_LSCPU" }}
+  </pre
+    >
+  </details>
+</p>
 
 <h2>Software</h2>
 
