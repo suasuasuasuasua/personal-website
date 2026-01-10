@@ -63,22 +63,18 @@
 
 <h2>Dependencies</h2>
 
+<!-- prettier-ignore -->
 <details>
-  <!-- prettier-ignore -->
   <summary><code>$ cat <a href='{{ $ghrepo }}/blob/{{ $git_hash }}/flake.lock'>flake.lock</a></code></summary>
   {{ with os.ReadFile "flake.lock" }}
-  <pre>
     {{ highlight (trim . "\n\r") "json" }}
-  </pre>
   {{ end }}
 </details>
 
+<!-- prettier-ignore -->
 <details>
-  <!-- prettier-ignore -->
   <summary><code>$ cat <a href='{{ $ghrepo }}/blob/{{ $git_hash }}/package.json'>package.json</a></code></summary>
   {{ with os.ReadFile "package.json" }}
-  <pre>
     {{ highlight (trim . "\n\r") "json" }}
-  </pre>
   {{ end }}
 </details>
