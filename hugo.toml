@@ -38,9 +38,6 @@ name = 'Debug'
 url = '/debug'
 weight = 100
 
-[security.funcs]
-getenv = ["^HUGO"]
-
 # https://gohugo.io/hugo-modules/
 [module]
 [[module.imports]]
