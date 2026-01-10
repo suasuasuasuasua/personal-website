@@ -30,21 +30,6 @@
         <a href="{{ $ghrepo }}/tree/staging ">staging</a> branches.
       </p>
 
-      <blockquote cite="">
-        <p>
-          The production branch is {{ os.Getenv "HUGO_GIT_DIFF_COUNT" }} commits
-          behind the staging branch.
-        </p>
-      </blockquote>
-
-      <details>
-        <!-- prettier-ignore -->
-        <summary><code>$ git diff --stat origin/main origin/staging</code></summary>
-        <pre>
-          {{ os.Getenv "HUGO_GIT_DIFF_STAT" }}
-        </pre>
-      </details>
-
       <h2>Hardware</h2>
 
       <details>
