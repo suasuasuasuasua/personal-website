@@ -31,8 +31,8 @@ name = 'About'
 url = '/about'
 weight = 20
 [[menu.main]]
-name = 'Nows'
-url = '/nows'
+name = 'Now'
+url = '/now'
 weight = 30
 [[menu.main]]
 name = 'Blog'
