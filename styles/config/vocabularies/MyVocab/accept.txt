@@ -1,9 +1,11 @@
+Bluesky
 CLion
 CPUs?
 HDDs?
 Hoang
 Isengard
 Jonsbo
+Laude
 Maplestory
 PCIe
 RPI('s)?

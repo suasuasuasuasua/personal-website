@@ -1,6 +1,10 @@
 <div>
+  <!-- prettier-ignore -->
   <a href="{{ $.Site.Params.ghrepo }}"> GitHub </a>
-  {{ if not (.Param "hideMadeWithLine") }} | Made with
-  <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+  <!-- prettier-ignore -->
+  {{ if not (.Param "hideMadeWithLine") }}
+    | <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
   {{ end }}
+  <!-- prettier-ignore -->
+  | Made with {{ ":heart:" | .RenderString }}
 </div>
