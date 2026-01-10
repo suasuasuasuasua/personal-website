@@ -36,7 +36,7 @@
         <!-- prettier-ignore -->
         <summary><code>$ uname --kernel-name --nodename --kernel-release --machine --processor --hardware-platform --operating-system</code></summary>
         <pre>
-          {{ os.Getenv "HUGO_UNAME" }}
+{{ os.Getenv "HUGO_UNAME" }}
         </pre>
       </details>
 
@@ -44,27 +44,27 @@
         <!-- prettier-ignore -->
         <summary><code>$ lscpu</code></summary>
         <pre>
-          {{ os.Getenv "HUGO_LSCPU" }}
+{{ os.Getenv "HUGO_LSCPU" }}
         </pre>
       </details>
 
       <h2>Software</h2>
 
       <pre>
-        $ dart-sass --version
-        {{ os.Getenv "HUGO_DART_SASS_VERSION" }}
+$ dart-sass --version
+{{ os.Getenv "HUGO_DART_SASS_VERSION" }}
 
-        $ go version
-        {{ os.Getenv "HUGO_GO_VERSION" }}
+$ go version
+{{ os.Getenv "HUGO_GO_VERSION" }}
 
-        $ hugo version
-        {{ os.Getenv "HUGO_HUGO_VERSION" }}
+$ hugo version
+{{ os.Getenv "HUGO_HUGO_VERSION" }}
 
-        $ node --version
-        {{ os.Getenv "HUGO_NODE_VERSION" }}
+$ node --version
+{{ os.Getenv "HUGO_NODE_VERSION" }}
 
-        $ npm --version
-        {{ os.Getenv "HUGO_NPM_VERSION" }}
+$ npm --version
+{{ os.Getenv "HUGO_NPM_VERSION" }}
       </pre>
 
       <h2>Dependencies</h2>
