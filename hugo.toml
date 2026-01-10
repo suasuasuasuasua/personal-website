@@ -47,7 +47,7 @@ getenv = ["^HUGO"]
 disable = false
 ignoreConfig = false
 ignoreImports = false
-path = 'github.com/janraasch/hugo-bearblog'
+path = 'github.com/hanwenguo/hugo-theme-nostyleplease'
 
 # https://github.com/janraasch/hugo-bearblog
 [params]
