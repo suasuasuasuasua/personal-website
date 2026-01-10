@@ -1,6 +1,7 @@
 <div>
   <a href="{{ $.Site.Params.ghrepo }}"> GitHub </a>
-  {{ if not (.Param "hideMadeWithLine") }} | Made with
-  <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+  {{ if not (.Param "hideMadeWithLine") }}
+    | <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
   {{ end }}
+  | Made with {{ ":heart:" | .RenderString }}
 </div>
