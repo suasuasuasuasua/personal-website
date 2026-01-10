@@ -2,6 +2,7 @@
 author = "Justin Hoang"
 baseURL = "https://sua.sh/"
 copyright = "Copyright © 2026, Justin Hoang."
+enableEmoji = true
 enableGitInfo = true
 enableRobotsTXT = true
 languageCode = "en-US"
@@ -30,16 +31,17 @@ name = 'About'
 url = '/about'
 weight = 20
 [[menu.main]]
+name = 'Now'
+url = '/now'
+weight = 30
+[[menu.main]]
 name = 'Blog'
 url = '/blog'
-weight = 30
+weight = 40
 [[menu.main]]
 name = 'Debug'
 url = '/debug'
 weight = 100
-
-[security.funcs]
-getenv = ["^HUGO"]
 
 # https://gohugo.io/hugo-modules/
 [module]
@@ -62,7 +64,7 @@ favicon = "images/favicon.png"
 # services like Twitter or Slack want to generate a preview of a link to your site.
 # See https://gohugo.io/templates/internal#twitter-cards and
 # https://gohugo.io/templates/internal#open-graph.
-images = ["images/share.png"]
+images = ["images/penguin.webp"]
 
 # Another "title" :-). This one is used as the site_name on the Hugo's internal
 # opengraph structured data template.
