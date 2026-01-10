@@ -2,53 +2,47 @@
 
 <h2>Deployment Status</h2>
 
+{{ $ghrepo := $.Site.Params.ghrepo }}
+{{ $git_date := os.Getenv "HUGO_LATEST_GIT_DATE" }}
+{{ $git_hash := os.Getenv "HUGO_LATEST_GIT_HASH" }}
+{{ $git_subject := os.Getenv "HUGO_LATEST_GIT_SUBJECT" }}
+
 <p>
   Latest
-  <a href="{{ $.Site.Params.ghrepo }}deployments">deployment</a> successful on
-  <a
-    href='{{ $.Site.Params.ghrepo }}commits/{{ os.Getenv "HUGO_LATEST_GIT_HASH"  }}'
-    >{{ os.Getenv "HUGO_LATEST_GIT_SUBJECT" }} ({{ os.Getenv
-    "HUGO_LATEST_GIT_HASH" }})</a
-  >
-  on {{ os.Getenv "HUGO_LATEST_GIT_DATE" }}
+  <a href="{{ $ghrepo }}deployments">deployment</a> successful on
+  <a href="{{ $ghrepo }}commits/{{ $git_hash }}">{{ $git_subject }} ({{ $git_hash }})</a>
+  on {{ $git_date }}
 </p>
 
 <p>
   See
   <a
-    href='{{ $.Site.Params.ghrepo }}compare/{{ os.Getenv
-  "HUGO_LATEST_GIT_HASH" }}...staging'
+    href="{{ $ghrepo }}compare/{{ $git_hash }}...staging"
     >differences</a
   >
-  between <a href="{{ $.Site.Params.ghrepo }}/tree/main ">production</a> and
-  <a href="{{ $.Site.Params.ghrepo }}/tree/staging ">staging</a> branches
+  between <a href="{{ $ghrepo }}/tree/main ">production</a> and
+  <a href="{{ $ghrepo }}/tree/staging ">staging</a> branches
 </p>
 
 <h2>Hardware</h2>
 
 <p>
   <details>
-    <summary>
-      <!-- prettier-ignore -->
-      <code>$ uname --kernel-name --nodename --kernel-release --machine --processor --hardware-platform --operating-system</code>
-    </summary>
+    <!-- prettier-ignore -->
+    <summary><code>$ uname --kernel-name --nodename --kernel-release --machine --processor --hardware-platform --operating-system</code></summary>
     <pre>
-  {{ os.Getenv "HUGO_UNAME" }}
-  </pre
-    >
+      {{ os.Getenv "HUGO_UNAME" }}
+    </pre>
   </details>
 </p>
 
 <p>
   <details>
-    <summary>
-      <!-- prettier-ignore -->
-      <code>$ lscpu</code>
-    </summary>
+    <!-- prettier-ignore -->
+    <summary><code>$ lscpu</code></summary>
     <pre>
-    {{ os.Getenv "HUGO_LSCPU" }}
-  </pre
-    >
+      {{ os.Getenv "HUGO_LSCPU" }}
+    </pre>
   </details>
 </p>
 
@@ -70,3 +64,29 @@
   $ npm --version
   {{ os.Getenv "HUGO_NPM_VERSION" }}
 </pre>
+
+<h2>Dependencies</h2>
+
+<p>
+  <details>
+    <!-- prettier-ignore -->
+  <summary><code>$ cat <a href='{{ $ghrepo }}/blob/{{ $git_hash }}/flake.lock'>flake.lock</a></code></summary>
+    {{ with os.ReadFile "flake.lock" }}
+    <pre>
+      {{ highlight (trim . "\n\r") "json" }}
+    </pre>
+    {{ end }}
+  </details>
+</p>
+
+<p>
+  <details>
+    <!-- prettier-ignore -->
+  <summary><code>$ cat <a href='{{ $ghrepo }}/blob/{{ $git_hash }}/package.json'>package.json</a></code></summary>
+    {{ with os.ReadFile "package.json" }}
+    <pre>
+      {{ highlight (trim . "\n\r") "json" }}
+    </pre>
+    {{ end }}
+  </details>
+</p>
