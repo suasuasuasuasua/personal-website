@@ -39,8 +39,8 @@ name = 'Now'
 url = '/now'
 weight = 40
 [[menu.main]]
-name = 'Debug'
-url = '/debug'
+name = 'Status'
+url = '/status'
 weight = 100
 
 # https://gohugo.io/hugo-modules/
