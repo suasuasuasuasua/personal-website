@@ -1,6 +1,6 @@
 # Basic metadata configuration for your blog.
 author = "Justin Hoang"
-baseURL = "https://sua.sh/"
+baseURL = "https://sua.dev/"
 copyright = "Copyright © 2026, Justin Hoang."
 enableEmoji = true
 enableGitInfo = true
