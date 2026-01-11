@@ -32,7 +32,7 @@
   <pre>
 Build timestamp: {{ $build_timestamp }}
 Branch: {{ $git_branch }}
-{{ if ne $git_dirty "0" }}
+{{ if and $git_dirty (ne $git_dirty "0") }}
 ⚠️  Uncommitted changes: {{ $git_dirty }} file(s) modified
 {{ else }}
 ✓ Clean working tree
