@@ -1,0 +1,26 @@
+{{ define "main" }}
+<content>
+  <p>{{ .Content }}</p>
+  <!-- List N posts from the blog -->
+  <ul class="blog-posts">
+    <!-- Grab only the actual posts (no _index) -->
+    {{ $n_posts := 5 }} {{ range first $n_posts (where .Site.RegularPages
+    "Section" "blog") }}
+    <li>
+      <span>
+        <i>
+          <time datetime='{{ .Date.Format "2006-01-02" }}'>
+            {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
+          </time>
+        </i>
+      </span>
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </li>
+    {{ else }}
+    <li>No posts yet</li>
+    {{ end }}
+  </ul>
+
+  <p>See more posts in <a href="{{ .Permalink }}blog">the archive</a>.</p>
+</content>
+{{ end }}
