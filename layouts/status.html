@@ -8,8 +8,6 @@
   {{ $git_hash := os.Getenv "HUGO_LATEST_GIT_HASH" }}
   {{ $git_subject := os.Getenv "HUGO_LATEST_GIT_SUBJECT" }}
 
-  <h2>Deployment Status</h2>
-
   <p>
     Latest
     <a href="{{ $ghrepo }}deployments">deployment</a> successful on
