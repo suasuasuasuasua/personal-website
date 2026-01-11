@@ -13,7 +13,7 @@
   <p>
     Latest
     <a href="{{ $ghrepo }}deployments">deployment</a> successful on
-    <a href="{{ $ghrepo }}commits/{{ $git_hash }}"
+    <a href="{{ $ghrepo }}commit/{{ $git_hash }}"
       >{{ $git_subject }} ({{ $git_hash }})</a
     >
     on {{ $git_date }}.
@@ -67,7 +67,7 @@ $ npm --version
 
   <!-- prettier-ignore -->
   <details>
-    <summary><code>$ cat <a href='{{ $ghrepo }}/blob/{{ $git_hash }}/flake.lock'>flake.lock</a></code></summary>
+    <summary><code>$ cat <a href='{{ $ghrepo }}blob/{{ $git_hash }}/flake.lock'>flake.lock</a></code></summary>
     {{ with os.ReadFile "flake.lock" }}
       {{ highlight (trim . "\n\r") "text" }}
     {{ end }}
@@ -75,7 +75,7 @@ $ npm --version
 
   <!-- prettier-ignore -->
   <details>
-    <summary><code>$ cat <a href='{{ $ghrepo }}/blob/{{ $git_hash }}/package.json'>package.json</a></code></summary>
+    <summary><code>$ cat <a href='{{ $ghrepo }}blob/{{ $git_hash }}/package.json'>package.json</a></code></summary>
     {{ with os.ReadFile "package.json" }}
       {{ highlight (trim . "\n\r") "text" }}
     {{ end }}
