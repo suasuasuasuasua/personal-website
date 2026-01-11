@@ -35,12 +35,12 @@ website.
 
 ## Socials
 
-- [Blog](https://sua.sh)
-  - [RSS Feed](https://sua.sh/blog/index.xml)
+- [Blog](https://sua.dev)
+  - [RSS Feed](https://sua.dev/blog/index.xml)
 - [GitHub](https://github.com/suasuasuasuasua)
 - [GoodReads](https://www.goodreads.com/user/show/94077403-justino)
 - [LinkedIn](https://www.linkedin.com/in/jhoang124/)
 
 ## Contact
 
-- [justinhoang@sua.sh](mailto:justinhoang@sua.sh)
+- [justinhoang@sua.dev](mailto:justinhoang@sua.dev)
