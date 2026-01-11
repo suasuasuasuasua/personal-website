@@ -7,6 +7,9 @@
   {{ $git_date := os.Getenv "HUGO_LATEST_GIT_DATE" }}
   {{ $git_hash := os.Getenv "HUGO_LATEST_GIT_HASH" }}
   {{ $git_subject := os.Getenv "HUGO_LATEST_GIT_SUBJECT" }}
+  {{ $git_branch := os.Getenv "HUGO_GIT_BRANCH" }}
+  {{ $git_dirty := os.Getenv "HUGO_GIT_DIRTY" }}
+  {{ $build_timestamp := os.Getenv "HUGO_BUILD_TIMESTAMP" }}
 
   <p>
     Latest
@@ -23,6 +26,18 @@
     between <a href="{{ $ghrepo }}/tree/main ">production</a> and
     <a href="{{ $ghrepo }}/tree/staging ">staging</a> branches.
   </p>
+
+  <h2>Build Information</h2>
+
+  <pre>
+Build timestamp: {{ $build_timestamp }}
+Branch: {{ $git_branch }}
+{{ if ne $git_dirty "0" }}
+⚠️  Uncommitted changes: {{ $git_dirty }} file(s) modified
+{{ else }}
+✓ Clean working tree
+{{ end }}
+  </pre>
 
   <h2>Hardware</h2>
 
@@ -42,17 +57,39 @@
     </pre>
   </details>
 
+  <details>
+    <!-- prettier-ignore -->
+    <summary><code>$ free -h</code></summary>
+    <pre>
+{{ os.Getenv "HUGO_MEMORY" }}
+    </pre>
+  </details>
+
+  <details>
+    <!-- prettier-ignore -->
+    <summary><code>$ df -h /</code></summary>
+    <pre>
+{{ os.Getenv "HUGO_DISK_SPACE" }}
+    </pre>
+  </details>
+
   <h2>Software</h2>
 
   <pre>
 $ dart-sass --version
 {{ os.Getenv "HUGO_DART_SASS_VERSION" }}
 
+$ direnv version
+{{ os.Getenv "HUGO_DIRENV_VERSION" }}
+
 $ go version
 {{ os.Getenv "HUGO_GO_VERSION" }}
 
 $ hugo version
 {{ os.Getenv "HUGO_HUGO_VERSION" }}
+
+$ nix --version
+{{ os.Getenv "HUGO_NIX_VERSION" }}
 
 $ node --version
 {{ os.Getenv "HUGO_NODE_VERSION" }}
