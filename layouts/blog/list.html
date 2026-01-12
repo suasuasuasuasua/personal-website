@@ -7,7 +7,9 @@
   </small>
   {{ end }}
 
-  <p><small>There are <strong>{{ .Pages.Len }}</strong> posts total.</small></p>
+  <p>
+    <small>There are <strong>{{ .Pages.Len }}</strong> posts total.</small>
+  </p>
 
   <ul class="blog-posts">
     {{ range .Pages }}
