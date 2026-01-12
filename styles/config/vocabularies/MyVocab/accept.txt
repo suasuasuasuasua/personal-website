@@ -7,6 +7,7 @@ Isengard
 Jonsbo
 Laude
 Maplestory
+Namecheap
 PCIe
 RPI('s)?
 SSDs?
@@ -26,6 +27,7 @@ Warcraft
 chatbot
 commitizen
 config
+dev
 devcontainer
 ethernet
 formatters
@@ -37,6 +39,7 @@ nixCats
 nixpkgs
 noob
 nvim
+preload
 rebase
 repo
 statusline
