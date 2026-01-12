@@ -1,10 +1,18 @@
-{{ define "main" }} {{ if eq .Type "blog" }} {{ if not .Params.menu }}
+{{ define "main" }} {{ if not .Params.menu }}
 <h1>{{ .Title }}</h1>
 <p>
   <small>
     <i>
+      Published:
       <time datetime='{{ .Date.Format "2006-01-02" }}'>
         {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
+      </time>
+    </i>
+    |
+    <i>
+      Updated:
+      <time datetime='{{ .Lastmod.Format "2006-01-02" }}'>
+        {{ .Lastmod.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
       </time>
     </i>
     | {{ .WordCount }} words | {{ .ReadingTime }} minute read
@@ -13,8 +21,8 @@
 {{ end }} {{ end }}
 <content> {{ .Content }} </content>
 
-{{ if eq .Type "blog" }} {{ if (.Param "enablePostNavigator") }} {{- partial
-"post_navigator.html" . -}} {{ end }} {{ end }} {{ if eq .Type "blog" }}
+{{ if (.Param "enablePostNavigator") }} {{- partial "post_navigator.html" . -}}
+{{ end }} {{ end }}
 <p>
   {{ range (.GetTerms "tags") }}
   <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
@@ -23,4 +31,4 @@
 {{ end }}
 
 <!-- page edits with git revision  -->
-{{ if eq .Type "blog" }}{{- partial "page-edit.html" . -}}{{ end }} {{ end }}
+{{- partial "page-edit.html" . -}}{{ end }} {{ end }}
