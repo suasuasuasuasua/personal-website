@@ -1,4 +1,4 @@
 {{ define "main" }}
 <content><p>{{ .Content }}</p></content>
 
-{{ partial "page-edit.html" }} {{ end }}
+{{- partial "page-edit.html" . -}} {{ end }}
