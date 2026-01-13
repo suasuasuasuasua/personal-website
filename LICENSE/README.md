@@ -1,5 +1,8 @@
 # LICENSE
 
+TLDR; there are four licenses in this project: CC BY-ND, GPLv3, Apache 2.0, and
+MIT. Please see the writeup below for more information.
+
 1. Creative work like my blog posts are licensed under the Creative Commons
    Attribution Share Alike 4.0 International. You are free to share my work.
    However, you must give the appropriate credit to me, and if you change the
