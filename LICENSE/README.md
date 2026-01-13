@@ -11,7 +11,7 @@ MIT. Please see the writeup below for more information.
    Please see the [legal code](https://creativecommons.org/licenses/by-nd/4.0/)
    for more information.
 
-1. The code that forms my website is licensed under the AGPL3 license. This
+1. The code that forms my website is licensed under the GPLv3 license. This
    means the code is free to be copied, but copied code must stay open source.
 
 1. The Hugo static site generator (SSG) project uses the Apache 2.0 license. It
