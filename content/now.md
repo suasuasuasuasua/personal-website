@@ -1,6 +1,7 @@
 ---
 title: Now
 description: What is keeping me busy?
+layout: now
 ---
 
 Here are my current interests that have been keeping me busy in no specific
