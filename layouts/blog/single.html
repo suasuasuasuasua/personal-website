@@ -1,5 +1,4 @@
-{{ define "main" }}
-{{ if not .Params.menu }}
+{{ define "main" }} {{ if not .Params.menu }}
 <h1>{{ .Title }}</h1>
 <p>
   <small>
@@ -14,7 +13,8 @@
 {{ end }}
 <content> {{ .Content }} </content>
 
-{{ if (.Param "enablePostNavigator") }} {{- partial "post_navigator.html" . -}} {{ end }}
+{{ if (.Param "enablePostNavigator") }} {{- partial "post_navigator.html" . -}}
+{{ end }}
 <p>
   {{ range (.GetTerms "tags") }}
   <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
@@ -22,5 +22,4 @@
 </p>
 
 <!-- page edits with git revision  -->
-{{- partial "page-edit.html" . -}}
-{{ end }}
+{{- partial "page-edit.html" . -}} {{ end }}
