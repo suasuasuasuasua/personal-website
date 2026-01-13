@@ -1,6 +1,7 @@
 ---
 title: About
 description: All About Me
+layout: about
 ---
 
 <!--toc:start-->
