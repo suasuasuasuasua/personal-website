@@ -4,8 +4,9 @@
   <!-- List N posts from the blog -->
   <ul class="blog-posts">
     <!-- Grab only the actual posts (no _index) -->
-    {{ $n_posts := 5 }} {{ range first $n_posts (where .Site.RegularPages
-    "Section" "blog") }}
+    <!-- prettier-ignore -->
+    {{ $n_posts := 5 }}
+    {{ range first $n_posts (where .Site.RegularPages "Section" "blog") }}
     <li>
       <span>
         <i>

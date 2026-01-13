@@ -9,11 +9,10 @@
   {{ $git_subject := os.Getenv "HUGO_PARAMS_LATEST_GIT_SUBJECT" }}
 
   <p>
-    Latest
-    <a href="{{ $ghrepo }}deployments">deployment</a> successful on
-    <a href="{{ $ghrepo }}commit/{{ $git_hash }}"
-      >{{ $git_subject }} ({{ $git_hash }})</a
-    >
+    <!-- prettier-ignore -->
+    Latest <a href="{{ $ghrepo }}deployments">deployment</a> successful on
+    <!-- prettier-ignore -->
+    <a href="{{ $ghrepo }}commit/{{ $git_hash }}">{{ $git_subject }} ({{ $git_hash }})</a>
     on {{ $git_date }}.
   </p>
 
