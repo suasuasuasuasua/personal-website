@@ -4,9 +4,9 @@
 
   <!-- prettier-ignore -->
   {{ $ghrepo := $.Site.Params.ghrepo }}
-  {{ $git_date := os.Getenv "HUGO_LATEST_GIT_DATE" }}
-  {{ $git_hash := os.Getenv "HUGO_LATEST_GIT_HASH" }}
-  {{ $git_subject := os.Getenv "HUGO_LATEST_GIT_SUBJECT" }}
+  {{ $git_date := os.Getenv "HUGO_PARAMS_LATEST_GIT_DATE" }}
+  {{ $git_hash := os.Getenv "HUGO_PARAMS_LATEST_GIT_HASH" }}
+  {{ $git_subject := os.Getenv "HUGO_PARAMS_LATEST_GIT_SUBJECT" }}
 
   <p>
     Latest
@@ -30,7 +30,7 @@
     <!-- prettier-ignore -->
     <summary><code>$ uname --kernel-name --nodename --kernel-release --machine --processor --hardware-platform --operating-system</code></summary>
     <pre>
-{{ os.Getenv "HUGO_UNAME" }}
+{{ os.Getenv "HUGO_PARAMS_UNAME" }}
     </pre>
   </details>
 
@@ -38,7 +38,7 @@
     <!-- prettier-ignore -->
     <summary><code>$ lscpu</code></summary>
     <pre>
-{{ os.Getenv "HUGO_LSCPU" }}
+{{ os.Getenv "HUGO_PARAMS_LSCPU" }}
     </pre>
   </details>
 
@@ -46,19 +46,19 @@
 
   <pre>
 $ dart-sass --version
-{{ os.Getenv "HUGO_DART_SASS_VERSION" }}
+{{ os.Getenv "HUGO_PARAMS_DART_SASS_VERSION" }}
 
 $ go version
-{{ os.Getenv "HUGO_GO_VERSION" }}
+{{ os.Getenv "HUGO_PARAMS_GO_VERSION" }}
 
 $ hugo version
-{{ os.Getenv "HUGO_HUGO_VERSION" }}
+{{ os.Getenv "HUGO_PARAMS_HUGO_PARAMS_VERSION" }}
 
 $ node --version
-{{ os.Getenv "HUGO_NODE_VERSION" }}
+{{ os.Getenv "HUGO_PARAMS_NODE_VERSION" }}
 
 $ npm --version
-{{ os.Getenv "HUGO_NPM_VERSION" }}
+{{ os.Getenv "HUGO_PARAMS_NPM_VERSION" }}
   </pre>
 
   <h2>Dependencies</h2>
