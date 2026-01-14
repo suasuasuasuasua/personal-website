@@ -13,6 +13,7 @@ RPI('s)?
 SSDs?
 Strix
 Thinkpad
+UIDs?
 Warcraft
 [Aa]nsible
 [Ee]leventy
@@ -45,3 +46,4 @@ repo
 statusline
 sus
 treesitter
+www
