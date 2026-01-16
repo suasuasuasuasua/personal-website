@@ -27,6 +27,7 @@ Warcraft
 [Oo]ptiplex
 [Vv][Ss][Cc]ode
 [Vv]ercel
+[Zz][Ff][Ss]
 bitwarden
 blink
 btop
@@ -61,5 +62,4 @@ treesitter
 uBlock
 vimium
 www
-zfs
 zsh

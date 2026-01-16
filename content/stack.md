@@ -53,6 +53,6 @@ as a software engineer (and nerd).
   - [zsh-vi-mode](https://github.com/jeffreytse/zsh-vi-mode)
   - [fzf shell integration](https://github.com/junegunn/fzf?tab=readme-ov-file#setting-up-shell-integration)
 
-[^1]: The Chromebook is running Fedora Linux GNOME
-[^2]: My girlfriend needs the MacBook more than me nowadays, so I daily drive
-    the Chromebook
+\[^1\]: The Chromebook is running Fedora Linux GNOME
+\[^2\]: My girlfriend needs the MacBook more than me nowadays, so I daily drive
+the Chromebook
