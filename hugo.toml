@@ -39,6 +39,10 @@ name = 'Now'
 url = '/now'
 weight = 40
 [[menu.main]]
+name = 'Stack'
+url = '/stack'
+weight = 50
+[[menu.main]]
 name = 'Status'
 url = '/status'
 weight = 100
