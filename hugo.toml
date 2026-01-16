@@ -20,6 +20,12 @@ tags = "/blog/:slug"
 [caches.images]
 dir = ":cacheDir/images"
 
+[markup]
+[markup.goldmark]
+[markup.goldmark.parser]
+[markup.goldmark.parser.attribute]
+block = true
+
 # https://gohugo.io/configuration/menus/
 [menu]
 [[menu.main]]

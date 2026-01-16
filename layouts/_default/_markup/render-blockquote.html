@@ -1,0 +1,27 @@
+<!-- prettier-ignore -->
+{{ $emojis := dict
+  "caution" ":exclamation:"
+  "important" ":information_source:"
+  "note" ":information_source:"
+  "tip" ":bulb:"
+  "warning" ":information_source:"
+}}
+
+<!-- prettier-ignore -->
+{{ if eq .Type "alert" }}
+<blockquote class="alert alert-{{ .AlertType }}">
+  <p class="alert-heading">
+    <!-- prettier-ignore -->
+    {{ transform.Emojify (index $emojis .AlertType) }}
+    <!-- prettier-ignore -->
+    {{ with .AlertTitle }}
+      {{ . }}
+    {{ else }}
+      {{ or (i18n .AlertType) (title .AlertType) }}
+    {{ end }}
+  </p>
+  {{ .Text }}
+</blockquote>
+{{ else }}
+<blockquote>{{ .Text }}</blockquote>
+{{ end }}
