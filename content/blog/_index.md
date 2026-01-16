@@ -9,5 +9,6 @@ description: Blog page
 1. Change is Good
 1. Chasing Productivity
 1. Homelab (Software side)
+1. Life is What You Make It
 1. Memories Are Reconstructions
 1. Setting up a Minecraft Server For Friends
