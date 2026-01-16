@@ -10,8 +10,12 @@
     just.enable = true;
     mdformat = {
       enable = true;
+      # https://mdformat.readthedocs.io/en/stable/users/plugins.html
       plugins = ps: [
+        ps.mdformat-footnote
         ps.mdformat-frontmatter
+        ps.mdformat-gfm
+        ps.mdformat-gfm-alerts
         ps.mdformat-simple-breaks
       ];
     };
