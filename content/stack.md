@@ -62,4 +62,4 @@ as a software engineer (and nerd).
 
 [^2]:
     My girlfriend needs the MacBook more than me nowadays, so I daily drive
-    the Chromebook
+    the Chromebook.
