@@ -51,11 +51,15 @@ as a software engineer (and nerd).
   - [tmux-yank](https://github.com/tmux-plugins/tmux-yank)
   - [vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)
 - [zsh](https://github.com/zsh-users/zsh)
-  - [zsh-vi-mode](https://github.com/jeffreytse/zsh-vi-mode)
   - [fzf shell integration](https://github.com/junegunn/fzf?tab=readme-ov-file#setting-up-shell-integration)
+  - [zsh-vi-mode](https://github.com/jeffreytse/zsh-vi-mode)
 
-[^1]: The Chromebook is running Fedora Linux GNOME
+[^1]:
+    The Chromebook is running Fedora Linux GNOME, not NixOS, for stability
+    reasons. Fedora has more out-of-the-box support [according to the official
+    Chrultrabook
+    docs](https://docs.chrultrabook.com/docs/installing/installing-linux.html).
 
 [^2]:
     My girlfriend needs the MacBook more than me nowadays, so I daily drive
-    the Chromebook
+    the Chromebook.
