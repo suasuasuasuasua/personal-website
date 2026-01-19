@@ -8,7 +8,7 @@
     deadnix.enable = true;
     end-of-file-fixer.enable = true;
     markdownlint.enable = true;
-    nixfmt-rfc-style.enable = true;
+    nixfmt.enable = true;
     prettier = {
       enable = false;
       settings.plugins = [
