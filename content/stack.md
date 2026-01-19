@@ -51,8 +51,8 @@ as a software engineer (and nerd).
   - [tmux-yank](https://github.com/tmux-plugins/tmux-yank)
   - [vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)
 - [zsh](https://github.com/zsh-users/zsh)
-  - [zsh-vi-mode](https://github.com/jeffreytse/zsh-vi-mode)
   - [fzf shell integration](https://github.com/junegunn/fzf?tab=readme-ov-file#setting-up-shell-integration)
+  - [zsh-vi-mode](https://github.com/jeffreytse/zsh-vi-mode)
 
 [^1]:
     The Chromebook is running Fedora Linux GNOME, not NixOS, for stability
