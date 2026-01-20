@@ -6,7 +6,11 @@
 default:
     @just --list
 
-# Update flake.nix inputs
+# Fast forward main branch
 [group('git')]
-fast-forward +branch="staging":
+fast-forward branch="staging":
     git merge --ff {{ branch }}
+
+# ssh with port forward
+ssh host port="1313":
+    ssh -L {{ port }}:localhost:{{ port }} {{ host }}
