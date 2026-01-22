@@ -37,7 +37,11 @@
     <!-- prettier-ignore -->
     <summary><code>$ lscpu</code></summary>
     <pre>
-{{ os.Getenv "HUGO_PARAMS_LSCPU" }}
+{{ with os.Getenv "HUGO_PARAMS_LSCPU" }}
+{{ . }}
+{{ else }}
+No CPU information available.
+{{ end }}
     </pre>
   </details>
 
@@ -66,7 +70,7 @@ $ npm --version
   <details>
     <summary><code>$ cat <a href='{{ $ghrepo }}blob/{{ $git_hash }}/flake.lock'>flake.lock</a></code></summary>
     {{ with os.ReadFile "flake.lock" }}
-      {{ highlight (trim . "\n\r") "text" }}
+    {{ highlight (trim . "\n\r") "text" }}
     {{ end }}
   </details>
 
@@ -74,7 +78,7 @@ $ npm --version
   <details>
     <summary><code>$ cat <a href='{{ $ghrepo }}blob/{{ $git_hash }}/package.json'>package.json</a></code></summary>
     {{ with os.ReadFile "package.json" }}
-      {{ highlight (trim . "\n\r") "text" }}
+    {{ highlight (trim . "\n\r") "text" }}
     {{ end }}
   </details>
 </content>
