@@ -23,10 +23,10 @@ what I'm learning about, probably tech-focused, and my thoughts in general.
 
 - Software Engineer @ [Lockheed Martin
   Space](https://www.lockheedmartin.com/en-us/capabilities/space.html) (April
-  2024 Present)
+  2024 - Present)
 - Software Engineer Asc @ [Lockheed Martin
   Space](https://www.lockheedmartin.com/en-us/capabilities/space.html) (July
-  2023 April 2024)
+  2023 - April 2024)
 
 My primary programming languages are C++ and Python. I have used C++ extensively
 for developing high performance simulation software. Moreover, I am familiar
