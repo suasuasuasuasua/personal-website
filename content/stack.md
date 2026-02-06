@@ -39,7 +39,7 @@ as a software engineer (and nerd).
   - [nvim-surrond](https://github.com/kylechui/nvim-surround)
   - [oil.nvim](https://github.com/stevearc/oil.nvim)
   - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
-  - [vim-tmx-navigator](https://github.com/christoomey/vim-tmux-navigator)
+  - [vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)
 - [prismlauncher](https://github.com/PrismLauncher/PrismLauncher)
 - [spotify](https://spotify.com/)
 - [tmux](https://github.com/tmux/tmux)
