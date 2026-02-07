@@ -50,6 +50,8 @@ project management.
   personal website built with Hugo and `nix`
 - [phys](https://github.com/suasuasuasuasua/phys.git): implementation of a
   physics library in C++ and Python from the ground up
+- [task-tracker](https://github.com/suasuasuasuasua/task-tracker.git): an
+  implementation of a task tracker CLI and TUI in C++ using FTXUI
 
 <!-- TODO: one day contribute to OSS projects! -->
 
