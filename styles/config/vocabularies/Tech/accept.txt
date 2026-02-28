@@ -4,6 +4,7 @@ Chrultrabook
 HDDs?
 Isengard
 Jonsbo
+NVMe
 PCIe
 RPI('s)?
 SSDs?

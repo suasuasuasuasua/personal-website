@@ -1,6 +1,6 @@
 ---
 title: Stack
-description: What tools I using?
+description: My tools
 layout: stack
 ---
 
@@ -13,8 +13,8 @@ as a software engineer (and nerd).
   - AirPods 4
   - AirPods Pro 2
 - Computers
-  - Acer Chromebook Spin 713-3w [^1]
-  - MacBook Pro Max M3 [^2]
+  - Thinkpad X1 Carbon G13
+  - MacBook Pro Max M3 [^1]
 - Tablets
   - Kindle 10th generation
   - iPad Pro M2
@@ -46,7 +46,7 @@ as a software engineer (and nerd).
   - [blink.cmp](https://github.com/Saghen/blink.cmp)
   - [neorg](https://github.com/nvim-neorg/neorg)
   - [tmux-continuum](https://github.com/tmux-plugins/tmux-continuum)
-  - [tmux-ressurect](https://github.com/tmux-plugins/tmux-resurrect)
+  - [tmux-resurrect](https://github.com/tmux-plugins/tmux-resurrect)
   - [tmux-sensible](https://github.com/tmux-plugins/tmux-sensible)
   - [tmux-yank](https://github.com/tmux-plugins/tmux-yank)
   - [vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)
@@ -55,11 +55,5 @@ as a software engineer (and nerd).
   - [zsh-vi-mode](https://github.com/jeffreytse/zsh-vi-mode)
 
 [^1]:
-    The Chromebook is running Fedora Linux GNOME, not NixOS, for stability
-    reasons. Fedora has more out-of-the-box support [according to the official
-    Chrultrabook
-    docs](https://docs.chrultrabook.com/docs/installing/installing-linux.html).
-
-[^2]:
-    My girlfriend needs the MacBook more than me nowadays, so I daily drive
-    the Chromebook.
+    My girlfriend needs the MacBook more than me nowadays, so I daily drive the
+    Chromebook.
