@@ -2,6 +2,7 @@ CLion
 CPUs?
 Chrultrabook
 HDDs?
+Iosevka
 Isengard
 Jonsbo
 NVMe
@@ -21,6 +22,7 @@ Warcraft
 [Oo]ptiplex
 [Vv][Ss][Cc]ode
 [Vv]ercel
+[Ww]ireguard
 [Zz][Ff][Ss]
 bitwarden
 blink
@@ -33,14 +35,19 @@ dev
 devcontainer
 dotfiles
 ethernet
+flatpak
 formatters
 fzf
+gcc
+golang
 lazygit
+localsend
 lockfile
 miniflux
 neorg
 nixCats
 nixpkgs
+nodejs
 nvim
 preload
 prismlauncher
@@ -49,6 +56,7 @@ repo
 sbctl
 statusline
 sus
+syncthing
 tmux
 treesitter
 uBlock
