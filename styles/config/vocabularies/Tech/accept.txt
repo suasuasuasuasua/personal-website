@@ -54,7 +54,6 @@ preload
 prismlauncher
 rebase
 repo
-sbctl
 statusline
 sus
 syncthing
