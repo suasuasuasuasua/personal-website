@@ -30,6 +30,7 @@ config
 darkreader
 dev
 devcontainer
+dotfiles
 ethernet
 formatters
 fzf
