@@ -24,8 +24,13 @@ as a software engineer (and nerd).
 
 ## Software
 
+My general dotfiles can be [found
+here](https://github.com/suasuasuasuasua/dotfiles) and my NixOS configurations
+can be [found here](https://github.com/suasuasuasuasua/nixos-config).
+
 - [btop](https://github.com/aristocratos/btop)
 - [lazygit](https://github.com/jesseduffield/lazygit)
+- [foot](https://codeberg.org/dnkl/foot)
 - [firefox](https://www.firefox.com/en-US/)
   - [bitwarden](https://bitwarden.com/)
   - [darkreader](https://github.com/darkreader/darkreader)
@@ -33,9 +38,11 @@ as a software engineer (and nerd).
   - [vimium](https://github.com/philc/vimium)
 - [fzf](https://github.com/junegunn/fzf)
 - [neovim](https://github.com/neovim/neovim)
+  - [blink.cmp](https://github.com/Saghen/blink.cmp)
   - [diffview.nvim](https://github.com/sindrets/diffview.nvim)
   - [grug-far.nvim](https://github.com/MagicDuck/grug-far.nvim)
   - [lazygit.nvim](https://github.com/kdheepak/lazygit.nvim)
+  - [neorg](https://github.com/nvim-neorg/neorg)
   - [nvim-surrond](https://github.com/kylechui/nvim-surround)
   - [oil.nvim](https://github.com/stevearc/oil.nvim)
   - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
@@ -43,16 +50,12 @@ as a software engineer (and nerd).
 - [prismlauncher](https://github.com/PrismLauncher/PrismLauncher)
 - [spotify](https://spotify.com/)
 - [tmux](https://github.com/tmux/tmux)
-  - [blink.cmp](https://github.com/Saghen/blink.cmp)
-  - [neorg](https://github.com/nvim-neorg/neorg)
   - [tmux-continuum](https://github.com/tmux-plugins/tmux-continuum)
   - [tmux-ressurect](https://github.com/tmux-plugins/tmux-resurrect)
   - [tmux-sensible](https://github.com/tmux-plugins/tmux-sensible)
   - [tmux-yank](https://github.com/tmux-plugins/tmux-yank)
   - [vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)
 - [zsh](https://github.com/zsh-users/zsh)
-  - [fzf shell integration](https://github.com/junegunn/fzf?tab=readme-ov-file#setting-up-shell-integration)
-  - [zsh-vi-mode](https://github.com/jeffreytse/zsh-vi-mode)
 
 [^1]:
     The Chromebook is running Fedora Linux GNOME, not NixOS, for stability
