@@ -61,7 +61,7 @@ project management.
 
 - [Blog RSS Feed](https://sua.dev/blog/index.xml)
 - [GitHub](https://github.com/suasuasuasuasua)
-- [GoodReads](https://www.goodreads.com/user/show/94077403-justino)
+- [Goodreads](https://www.goodreads.com/user/show/94077403-justino)
 - [LinkedIn](https://www.linkedin.com/in/jhoang124/)
 
 ## Contact
