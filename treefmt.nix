@@ -19,8 +19,7 @@
         ps.mdformat-simple-breaks
       ];
     };
-    nixfmt.enable = pkgs.lib.meta.availableOn pkgs.stdenv.buildPlatform pkgs.nixfmt-rfc-style.compiler;
-    nixfmt.package = pkgs.nixfmt-rfc-style;
+    nixfmt.enable = true;
     prettier = {
       enable = true;
       settings.plugins = [
