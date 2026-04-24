@@ -91,7 +91,7 @@ I do have a few regrets about the system after a year of using it.
   - I am only running into memory issues when I try to run larger Ollama models
     like Gemma3
   - I am also experimenting with running three separate [Minecraft
-    servers](https://github.com/suasuasuasuasua/nixos-config/blob/aad799a2f4a52863c6baaedd5c70ce5182fd20ba/configurations/nixos/lab/services/minecraft-server.nix)
+    servers](https://gitea.sua.dev/sua/nixos-config/blob/aad799a2f4a52863c6baaedd5c70ce5182fd20ba/configurations/nixos/lab/services/minecraft-server.nix)
     at the same time. Though I haven't hit any issues yet, I would have better
     peace of mind since these servers can be quite intensive
 - The CPU is great, but sometimes I want it had more power
@@ -104,7 +104,7 @@ I do have a few regrets about the system after a year of using it.
     outages
 
 The exact configuration, at the time of writing, can be [found
-here](https://github.com/suasuasuasuasua/nixos-config/blob/aad799a2f4a52863c6baaedd5c70ce5182fd20ba/configurations/nixos/lab/README.md).
+here](https://gitea.sua.dev/sua/nixos-config/blob/aad799a2f4a52863c6baaedd5c70ce5182fd20ba/configurations/nixos/lab/README.md).
 
 ## Pi
 
@@ -133,7 +133,7 @@ availability services.
   - Service monitoring tool
 
 The exact configuration, at the time of writing, can be [found
-here](https://github.com/suasuasuasuasua/nixos-config/blob/aad799a2f4a52863c6baaedd5c70ce5182fd20ba/configurations/nixos/pi/README.md).
+here](https://gitea.sua.dev/sua/nixos-config/blob/aad799a2f4a52863c6baaedd5c70ce5182fd20ba/configurations/nixos/pi/README.md).
 
 ## Other
 

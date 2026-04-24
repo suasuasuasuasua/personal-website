@@ -44,13 +44,13 @@ project management.
 
 ## Projects
 
-- [NixOS Configuration](https://github.com/suasuasuasuasua/nixos-config.git):
+- [NixOS Configuration](https://gitea.sua.dev/sua/nixos-config.git):
   highly modular `nix` configuration spanning my entire infrastructure
-- [Personal Website](https://github.com/suasuasuasuasua/personal-website.git):
+- [Personal Website](https://gitea.sua.dev/sua/personal-website.git):
   personal website built with Hugo and `nix`
-- [phys](https://github.com/suasuasuasuasua/phys.git): implementation of a
+- [phys](https://gitea.sua.dev/sua/phys.git): implementation of a
   physics library in C++ and Python from the ground up
-- [task-tracker](https://github.com/suasuasuasuasua/task-tracker.git): an
+- [task-tracker](https://gitea.sua.dev/sua/task-tracker.git): an
   implementation of a task tracker CLI and TUI in C++ using FTXUI
 
 <!-- TODO: one day contribute to OSS projects! -->
@@ -60,7 +60,7 @@ project management.
 ## Links
 
 - [Blog RSS Feed](https://sua.dev/blog/index.xml)
-- [GitHub](https://github.com/suasuasuasuasua)
+- [GitHub](https://gitea.sua.dev/sua)
 - [Goodreads](https://www.goodreads.com/user/show/94077403-justino)
 - [LinkedIn](https://www.linkedin.com/in/jhoang124/)
 

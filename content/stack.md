@@ -25,8 +25,8 @@ as a software engineer (and nerd).
 ## Software
 
 My general dotfiles can be [found
-here](https://github.com/suasuasuasuasua/dotfiles) and my NixOS configurations
-can be [found here](https://github.com/suasuasuasuasua/nixos-config).
+here](https://gitea.sua.dev/sua/dotfiles) and my NixOS configurations
+can be [found here](https://gitea.sua.dev/sua/nixos-config).
 
 - [btop](https://github.com/aristocratos/btop)
 - [lazygit](https://github.com/jesseduffield/lazygit)

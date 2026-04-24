@@ -1,4 +1,4 @@
-module github.com/suasuasuasuasua/personal-website
+module gitea.sua.dev/sua/personal-website
 
 go 1.25.5
 

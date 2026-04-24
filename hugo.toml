@@ -98,4 +98,4 @@ title = "Hugo ʕ•ᴥ•ʔ Bear"
 # dateFormat = "2006-01-02"
 
 # other config
-ghrepo = "https://github.com/suasuasuasuasua/personal-website/"
+gitrepo = "https://gitea.sua.dev/sua/personal-website/"

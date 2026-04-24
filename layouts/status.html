@@ -3,24 +3,24 @@
   <h1>{{ .Title }}</h1>
 
   <!-- prettier-ignore -->
-  {{ $ghrepo := $.Site.Params.ghrepo }}
+  {{ $gitrepo := $.Site.Params.gitrepo }}
   {{ $git_date := os.Getenv "HUGO_PARAMS_LATEST_GIT_DATE" }}
   {{ $git_hash := os.Getenv "HUGO_PARAMS_LATEST_GIT_HASH" }}
   {{ $git_subject := os.Getenv "HUGO_PARAMS_LATEST_GIT_SUBJECT" }}
 
   <p>
     <!-- prettier-ignore -->
-    Latest <a href="{{ $ghrepo }}deployments">deployment</a> successful on
+    Latest <a href="{{ $gitrepo }}deployments">deployment</a> successful on
     <!-- prettier-ignore -->
-    <a href="{{ $ghrepo }}commit/{{ $git_hash }}">{{ $git_subject }} ({{ $git_hash }})</a>
+    <a href="{{ $gitrepo }}commit/{{ $git_hash }}">{{ $git_subject }} ({{ $git_hash }})</a>
     on {{ $git_date }}.
   </p>
 
   <p>
     See
-    <a href="{{ $ghrepo }}compare/{{ $git_hash }}...staging">differences</a>
-    between <a href="{{ $ghrepo }}/tree/main ">production</a> and
-    <a href="{{ $ghrepo }}/tree/staging ">staging</a> branches.
+    <a href="{{ $gitrepo }}compare/{{ $git_hash }}...staging">differences</a>
+    between <a href="{{ $gitrepo }}/tree/main ">production</a> and
+    <a href="{{ $gitrepo }}/tree/staging ">staging</a> branches.
   </p>
 
   <h2>Hardware</h2>
@@ -68,7 +68,7 @@ $ npm --version
 
   <!-- prettier-ignore -->
   <details>
-    <summary><code>$ cat <a href='{{ $ghrepo }}blob/{{ $git_hash }}/flake.lock'>flake.lock</a></code></summary>
+    <summary><code>$ cat <a href='{{ $gitrepo }}blob/{{ $git_hash }}/flake.lock'>flake.lock</a></code></summary>
     {{ with os.ReadFile "flake.lock" }}
     {{ highlight (trim . "\n\r") "text" }}
     {{ end }}
@@ -76,7 +76,7 @@ $ npm --version
 
   <!-- prettier-ignore -->
   <details>
-    <summary><code>$ cat <a href='{{ $ghrepo }}blob/{{ $git_hash }}/package.json'>package.json</a></code></summary>
+    <summary><code>$ cat <a href='{{ $gitrepo }}blob/{{ $git_hash }}/package.json'>package.json</a></code></summary>
     {{ with os.ReadFile "package.json" }}
     {{ highlight (trim . "\n\r") "text" }}
     {{ end }}

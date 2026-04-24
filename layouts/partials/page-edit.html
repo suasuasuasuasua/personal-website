@@ -6,13 +6,13 @@
     Last updated: {{ .Lastmod.Format "2006-01-02" }}{{ with .GitInfo }} :
     <a
       class="text-blue-600 hover:text-blue-500"
-      href="{{ $.Site.Params.ghrepo }}commit/{{ .Hash }}"
+      href="{{ $.Site.Params.gitrepo }}commit/{{ .Hash }}"
       >{{ .Subject }} ({{ .AbbreviatedHash }})</a
     >
     |
     <a
       class="text-blue-600 hover:text-blue-500"
-      href="{{ $.Site.Params.ghrepo }}commits/{{ .Hash }}/content/{{ $.Page.File.Path }}"
+      href="{{ $.Site.Params.gitrepo }}commits/{{ .Hash }}/content/{{ $.Page.File.Path }}"
       >History</a
     >
     {{ end }}

@@ -7,11 +7,11 @@ layout: now
 Here are my current interests that have been keeping me busy in no specific
 order.
 
-- My [personal website](https://github.com/suasuasuasuasua/personal-website)
+- My [personal website](https://gitea.sua.dev/sua/personal-website)
 - Self hosting infrastructure
 - Software Configuration
-  - My [NixOS](https://github.com/suasuasuasuasua/nixos-config) configuration
-  - My [dotfiles](https://github.com/suasuasuasuasua/dotfiles) configuration
+  - My [NixOS](https://gitea.sua.dev/sua/nixos-config) configuration
+  - My [dotfiles](https://gitea.sua.dev/sua/dotfiles) configuration
 - Fitness
   - Hiking
   - Running
