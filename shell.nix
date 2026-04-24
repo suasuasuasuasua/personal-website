@@ -14,6 +14,7 @@ pkgs.mkShellNoCC {
     hugo
     just
     nodejs_24
+    openssh
     vale
   ];
 }
