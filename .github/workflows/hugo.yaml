@@ -42,7 +42,6 @@ jobs:
             --cacheDir "${{ runner.temp }}/hugo_cache"
       - name: Deploy
         if: github.ref == 'refs/heads/main'
-        shell: bash
         env:
           DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
           DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
