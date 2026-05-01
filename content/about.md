@@ -60,7 +60,7 @@ project management.
 ## Links
 
 - [Blog RSS Feed](https://sua.dev/blog/index.xml)
-- [GitHub](https://gitea.sua.dev/sua)
+- [Gitea](https://gitea.sua.dev/sua)
 - [Goodreads](https://www.goodreads.com/user/show/94077403-justino)
 - [LinkedIn](https://www.linkedin.com/in/jhoang124/)
 

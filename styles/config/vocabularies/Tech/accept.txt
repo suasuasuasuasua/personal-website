@@ -13,6 +13,7 @@ UIDs?
 Warcraft
 [Aa]nsible
 [Ee]leventy
+[Gg]itea
 [Hh]omelab
 [Nn]eovim
 [Nn]ixvim
