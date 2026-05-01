@@ -13,6 +13,7 @@ pkgs.mkShellNoCC {
     go_1_25
     hugo
     just
+    netcat
     nodejs_24
     openssh
     rsync

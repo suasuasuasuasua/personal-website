@@ -33,20 +33,30 @@ jobs:
         run: |
           git config core.quotepath false
           git config --global http.sslCAInfo "$GIT_SSL_CAINFO"
+      - name: Set deploy config
+        id: config
+        run: |
+          if [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
+            echo "base_url=https://sua.dev/" >> "$GITHUB_OUTPUT"
+            echo "base_path=/var/www/sua.dev" >> "$GITHUB_OUTPUT"
+          elif [[ "${{ github.ref }}" == "refs/heads/staging" ]]; then
+            echo "base_url=https://staging.sua.dev/" >> "$GITHUB_OUTPUT"
+            echo "base_path=/var/www/staging.sua.dev" >> "$GITHUB_OUTPUT"
+          fi
       - name: Build the site
         run: |
           hugo \
             --gc \
             --minify \
-            --baseURL "https://sua.dev/" \
+            --baseURL "${{ steps.config.outputs.base_url || 'https://sua.dev/' }}" \
             --cacheDir "${{ runner.temp }}/hugo_cache"
       - name: Deploy
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/staging'
         env:
           DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
           DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
           DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
-          DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
+          DEPLOY_PATH: ${{ steps.config.outputs.base_path }}
         run: |
           mkdir -p ~/.ssh
           echo "$DEPLOY_SSH_KEY" > ~/.ssh/deploy_key
