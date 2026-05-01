@@ -43,6 +43,10 @@ jobs:
             echo "base_url=https://staging.sua.dev/" >> "$GITHUB_OUTPUT"
             echo "base_path=/var/www/staging.sua.dev" >> "$GITHUB_OUTPUT"
           fi
+      - name: Source .envrc
+        run: |
+          source <(grep -v '^use ' .envrc)
+          env | grep '^HUGO_PARAMS_' >> "$GITHUB_ENV"
       - name: Build the site
         run: |
           hugo \
