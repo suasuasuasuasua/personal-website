@@ -17,6 +17,7 @@ pkgs.mkShellNoCC {
     nodejs_24
     openssh
     rsync
+    util-linux
     vale
   ];
 }
