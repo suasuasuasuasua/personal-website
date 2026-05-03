@@ -68,8 +68,7 @@ jobs:
           ssh-keyscan "$DEPLOY_HOST" >> ~/.ssh/known_hosts
           # sync the files
           rsync -avz --delete \
-            --chown=admin:nginx \
-            --chmod=D770,F660 \
+            --chmod=D755,F644 \
             -e "ssh -i ~/.ssh/deploy_key" \
             ./public/ \
             "${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}"
