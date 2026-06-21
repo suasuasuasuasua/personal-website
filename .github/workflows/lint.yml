@@ -9,7 +9,7 @@ jobs:
     runs-on: nix
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0 # required for `nix flake show`
       - name: Flake check
@@ -18,7 +18,7 @@ jobs:
     runs-on: nix
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0 # required for `nix flake show`
       - name: Flake check
